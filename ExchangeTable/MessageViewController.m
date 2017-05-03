@@ -1,68 +1,55 @@
 //
-//  TableOne.m
+//  MessageViewController.m
 //  ExchangeTable
 //
-//  Created by user44 on 2017/4/27.
+//  Created by Jayla on 2017/5/3.
 //  Copyright © 2017年 wuyilong. All rights reserved.
 //
 
-#import "TableOne.h"
-#import "CellController.h"
+#import "MessageViewController.h"
 #import "Note.h"
 
-@interface TableOne ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface MessageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableViewCell *mainImformation;
+@property (weak, nonatomic) IBOutlet UITableView *messageList;
 
 @property (nonatomic) NSMutableArray<Note *> *notes;
 @end
 
-@implementation TableOne
+@implementation MessageViewController
+- (IBAction)addMessage:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.searchBar.delegate = self;
+    self.messageList.delegate = self;
+    self.messageList.dataSource = self;
     
-    self.tableView.estimatedRowHeight = 50;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-
     self.notes = [NSMutableArray new];
     for (int k =1; k <= 10; k++) {
         Note *note = [Note new];
         note.title = [NSString stringWithFormat:@"title %d",k];
-//        note.image = [UIImage imageNamed:@"apple.jpg"];
         [self.notes addObject:note];
     }
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark MessageList Method
 
-
-#pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.notes.count;
+    return 5;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.labelCell.text = self.notes[indexPath.row].title;
-   
-    return  cell;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
+    cell.textLabel.text = self.notes[indexPath.row].title;
+    
+    return cell;
 }
-
-
-
-#pragma mark UISearchBarController
-
-
 /*
 #pragma mark - Navigation
 

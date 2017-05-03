@@ -15,6 +15,7 @@
 		13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCB1EB213B200F7B74A /* Assets.xcassets */; };
 		13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */; };
 		13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CD71EB2174E00F7B74A /* TableOne.m */; };
+		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		13CC8CD01EB213B200F7B74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CC8CD61EB2174E00F7B74A /* TableOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableOne.h; sourceTree = "<group>"; };
 		13CC8CD71EB2174E00F7B74A /* TableOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableOne.m; sourceTree = "<group>"; };
+		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		EC99C9421EB5DA68007333F6 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		EC99C9431EB5DA68007333F6 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +85,8 @@
 				EC99C9431EB5DA68007333F6 /* Note.m */,
 				13C916E01EB8B5C6009E1CD3 /* CellController.h */,
 				13C916E11EB8B5C6009E1CD3 /* CellController.m */,
+				EC6607171EBA1B800098D625 /* MessageViewController.h */,
+				EC6607181EBA1B800098D625 /* MessageViewController.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,
 				13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */,
+				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
