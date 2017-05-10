@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
+		13A098AF1EC2FA4700328628 /* klklViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A098AE1EC2FA4700328628 /* klklViewController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
 		13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC31EB213B200F7B74A /* AppDelegate.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		1300E3AF1EBB589B00714C64 /* TheModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheModel.h; sourceTree = "<group>"; };
 		1300E3B01EBB589B00714C64 /* TheModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheModel.m; sourceTree = "<group>"; };
+		13A098AD1EC2FA4700328628 /* klklViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = klklViewController.h; sourceTree = "<group>"; };
+		13A098AE1EC2FA4700328628 /* klklViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = klklViewController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
 		13C916E11EB8B5C6009E1CD3 /* CellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellController.m; sourceTree = "<group>"; };
 		13CC8CBC1EB213B200F7B74A /* ExchangeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +60,8 @@
 		13CC8CB31EB213B200F7B74A = {
 			isa = PBXGroup;
 			children = (
+				13A098AD1EC2FA4700328628 /* klklViewController.h */,
+				13A098AE1EC2FA4700328628 /* klklViewController.m */,
 				13CC8CBE1EB213B200F7B74A /* ExchangeTable */,
 				13CC8CBD1EB213B200F7B74A /* Products */,
 				13CC8CBF1EB213B200F7B74A /* Supporting Files */,
@@ -177,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */,
+				13A098AF1EC2FA4700328628 /* klklViewController.m in Sources */,
 				13CC8CC71EB213B200F7B74A /* ViewController.m in Sources */,
 				13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */,
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
