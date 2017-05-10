@@ -86,30 +86,30 @@
 }
 
 
-//#pragma mark UISearchBarDelegate
-//
-//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-//{
-//    self.navigationController.navigationBar.hidden = TRUE;
-//    CGRect r = self.view.frame;
-//    r.origin.y = -44;
-//    r.size.height += 44;
-//    self.view.frame = r;
-//    
-//    [searchBar setShowsCancelButton:YES animated:YES];
-//}
-//
-//
-//-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-//{
-//    [searchBar setShowsCancelButton:NO animated:YES];
-//}
-//
-//-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-//{
-//    [searchBar resignFirstResponder];
-//    self.navigationController.navigationBar.hidden = false;
-//}
+#pragma mark UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.navigationController.navigationBar.hidden = TRUE;
+    CGRect r = self.view.frame;
+    r.origin.y = -44;
+    r.size.height += 44;
+    self.view.frame = r;
+    
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    self.navigationController.navigationBar.hidden = false;
+}
 
 /*
  #pragma mark - Navigation
