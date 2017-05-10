@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 @interface Note : NSObject
 @property (nonatomic) NSString *title;
-@property (nonatomic) UIImage *image;
+//@property (nonatomic) UIImage *image;
+@property (nonatomic) NSString *content;
+@property (nonatomic) NSString *messageNote;
 
 @end

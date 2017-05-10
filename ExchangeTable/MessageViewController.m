@@ -28,7 +28,7 @@
     self.notes = [NSMutableArray new];
     for (int k =1; k <= 10; k++) {
         Note *note = [Note new];
-        note.title = [NSString stringWithFormat:@"title %d",k];
+        note.messageNote = [NSString stringWithFormat:@"title %d",k];
         [self.notes addObject:note];
     }
 }
@@ -40,13 +40,13 @@
 #pragma mark MessageList Method
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.notes.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.notes[indexPath.row].title;
+    cell.textLabel.text = self.notes[indexPath.row].messageNote;
     
     return cell;
 }
