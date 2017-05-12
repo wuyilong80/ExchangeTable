@@ -10,6 +10,7 @@
 #import "CellController.h"
 #import "Note.h"
 #import "TheModel.h"
+#import "MessageViewController.h"
 
 @interface TableOne ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -47,6 +48,8 @@
                 NSDictionary *er=rows[k];
                 
                 note.title=er[@"GameName"];
+                note.gameid = er[@"id"];
+                NSLog(@"%@",note.gameid);
                 [self.notez addObject:note];
 
             }
@@ -85,31 +88,42 @@
     return  cell;
 }
 
-
-#pragma mark UISearchBarDelegate
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    self.navigationController.navigationBar.hidden = TRUE;
-    CGRect r = self.view.frame;
-    r.origin.y = -44;
-    r.size.height += 44;
-    self.view.frame = r;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    [searchBar setShowsCancelButton:YES animated:YES];
+    if ([segue.identifier isEqualToString:@"messageSegue"]) {
+        MessageViewController *message = segue.destinationViewController;
+        NSIndexPath *i = [self.tableView indexPathForSelectedRow];
+        Note *note=self.notez[i.row];
+        message.noteMessage = note;
+        
+    }
 }
 
 
--(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    [searchBar setShowsCancelButton:NO animated:YES];
-}
-
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar resignFirstResponder];
-    self.navigationController.navigationBar.hidden = false;
-}
+//#pragma mark UISearchBarDelegate
+//
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+//{
+//    self.navigationController.navigationBar.hidden = TRUE;
+//    CGRect r = self.view.frame;
+//    r.origin.y = -44;
+//    r.size.height += 44;
+//    self.view.frame = r;
+//    
+//    [searchBar setShowsCancelButton:YES animated:YES];
+//}
+//
+//
+//-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+//{
+//    [searchBar setShowsCancelButton:NO animated:YES];
+//}
+//
+//-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+//{
+//    [searchBar resignFirstResponder];
+//    self.navigationController.navigationBar.hidden = false;
+//}
 
 /*
  #pragma mark - Navigation

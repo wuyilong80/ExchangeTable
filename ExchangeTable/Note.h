@@ -13,5 +13,6 @@
 //@property (nonatomic) UIImage *image;
 @property (nonatomic) NSString *content;
 @property (nonatomic) NSString *messageNote;
+@property (nonatomic) NSString *gameid;
 
 @end

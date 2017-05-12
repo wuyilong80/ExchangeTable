@@ -8,48 +8,54 @@
 
 #import "MessageViewController.h"
 #import "Note.h"
+#import "MessageCellController.h"
 
-@interface MessageViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableViewCell *mainImformation;
-@property (weak, nonatomic) IBOutlet UITableView *messageList;
-
-@property (nonatomic) NSMutableArray<Note *> *notes;
+@interface MessageViewController()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *catch;
 @end
 
 @implementation MessageViewController
-- (IBAction)addMessage:(id)sender {
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.messageList.delegate = self;
-    self.messageList.dataSource = self;
+    self.catch = [NSMutableArray new];
     
-    self.notes = [NSMutableArray new];
-    for (int k =1; k <= 10; k++) {
-        Note *note = [Note new];
-        note.messageNote = [NSString stringWithFormat:@"title %d",k];
-        [self.notes addObject:note];
+    [self.catch addObject:self.noteMessage.title];
+    [self.catch addObject:self.noteMessage.title];
+    [self.catch addObject:self.noteMessage.gameid];
+
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    
+//    self.messageGameName.text = self.noteMessage.title;
     }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark MessageList Method
+
+#pragma mark UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.notes.count;
+    
+    
+    return self.catch.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.notes[indexPath.row].messageNote;
+    MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
     
-    return cell;
+    cell.messageGameName.text = self.catch[indexPath.row];
+    
+    
+    return  cell;
 }
+
 /*
 #pragma mark - Navigation
 
