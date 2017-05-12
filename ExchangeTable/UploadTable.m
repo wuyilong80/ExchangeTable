@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     // Do any additional setup after loading the view.
 }
 
@@ -26,6 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+}
 /*
 #pragma mark - Navigation
 
