@@ -12,7 +12,6 @@
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
 		13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC31EB213B200F7B74A /* AppDelegate.m */; };
-		13CC8CC71EB213B200F7B74A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC61EB213B200F7B74A /* ViewController.m */; };
 		13CC8CCA1EB213B200F7B74A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CC81EB213B200F7B74A /* Main.storyboard */; };
 		13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCB1EB213B200F7B74A /* Assets.xcassets */; };
 		13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */; };
@@ -32,8 +31,6 @@
 		13CC8CC01EB213B200F7B74A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13CC8CC21EB213B200F7B74A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13CC8CC31EB213B200F7B74A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13CC8CC51EB213B200F7B74A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13CC8CC61EB213B200F7B74A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		13CC8CC91EB213B200F7B74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13CC8CCB1EB213B200F7B74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13CC8CCE1EB213B200F7B74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,24 +76,22 @@
 			children = (
 				13CC8CC21EB213B200F7B74A /* AppDelegate.h */,
 				13CC8CC31EB213B200F7B74A /* AppDelegate.m */,
-				13CC8CC51EB213B200F7B74A /* ViewController.h */,
-				13CC8CC61EB213B200F7B74A /* ViewController.m */,
 				13CC8CC81EB213B200F7B74A /* Main.storyboard */,
 				13CC8CCB1EB213B200F7B74A /* Assets.xcassets */,
 				13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */,
 				13CC8CD01EB213B200F7B74A /* Info.plist */,
 				13CC8CD61EB2174E00F7B74A /* TableOne.h */,
 				13CC8CD71EB2174E00F7B74A /* TableOne.m */,
-				EC99C9421EB5DA68007333F6 /* Note.h */,
-				EC99C9431EB5DA68007333F6 /* Note.m */,
 				13C916E01EB8B5C6009E1CD3 /* CellController.h */,
 				13C916E11EB8B5C6009E1CD3 /* CellController.m */,
 				EC6607171EBA1B800098D625 /* MessageViewController.h */,
 				EC6607181EBA1B800098D625 /* MessageViewController.m */,
-				1300E3AF1EBB589B00714C64 /* TheModel.h */,
-				1300E3B01EBB589B00714C64 /* TheModel.m */,
 				13B4C4741EC496D200F4F254 /* MessageCellController.h */,
 				13B4C4751EC496D200F4F254 /* MessageCellController.m */,
+				EC99C9421EB5DA68007333F6 /* Note.h */,
+				EC99C9431EB5DA68007333F6 /* Note.m */,
+				1300E3AF1EBB589B00714C64 /* TheModel.h */,
+				1300E3B01EBB589B00714C64 /* TheModel.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -182,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */,
-				13CC8CC71EB213B200F7B74A /* ViewController.m in Sources */,
 				13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */,
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,

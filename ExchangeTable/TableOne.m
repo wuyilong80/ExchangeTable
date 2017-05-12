@@ -15,7 +15,7 @@
 @interface TableOne ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSMutableArray <Note *> *notez;
+@property (nonatomic) NSMutableArray <Note *> *mainNotes;
 @end
 
 @implementation TableOne
@@ -29,7 +29,7 @@
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    self.notez = [NSMutableArray new];
+    self.mainNotes = [NSMutableArray new];
     [TheModel the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"%@",error);
@@ -47,24 +47,20 @@
                 Note *note = [Note new];
                 NSDictionary *er=rows[k];
                 
-                note.title=er[@"GameName"];
+                note.changeOutGame=er[@"GameName"];
                 note.gameid = er[@"id"];
+                note.changeInGame = er[@"WantGame"];
+                note.contactMail = er[@"mail"];
                 NSLog(@"%@",note.gameid);
-                [self.notez addObject:note];
-
+                [self.mainNotes addObject:note];
             }
-            
             dispatch_async(dispatch_get_main_queue(), ^{
-                
                 [self.tableView reloadData];
             });
         }else{
             NSLog(@"mapd:mysqli_errno %@",mysqli_errno);
         }
-        
     }];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,16 +70,14 @@
 
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.notez.count;
+    return self.mainNotes.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    Note *note=self.notez[indexPath.row];
-    
-    cell.contentCell.text=note.title;
+    Note *note=self.mainNotes[indexPath.row];
+    cell.mainContextLabel.text=note.changeOutGame;
     
     return  cell;
 }
@@ -93,7 +87,7 @@
     if ([segue.identifier isEqualToString:@"messageSegue"]) {
         MessageViewController *message = segue.destinationViewController;
         NSIndexPath *i = [self.tableView indexPathForSelectedRow];
-        Note *note=self.notez[i.row];
+        Note *note=self.mainNotes[i.row];
         message.noteMessage = note;
         
     }

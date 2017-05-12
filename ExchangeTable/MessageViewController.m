@@ -19,18 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.catch = [NSMutableArray new];
-    
-    [self.catch addObject:self.noteMessage.title];
-    [self.catch addObject:self.noteMessage.title];
-    [self.catch addObject:self.noteMessage.gameid];
+    [self.catch addObject:self.noteMessage.changeOutGame];
+    [self.catch addObject:self.noteMessage.changeInGame];
+    [self.catch addObject:self.noteMessage.contactMail];
 
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    
-//    self.messageGameName.text = self.noteMessage.title;
     }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +45,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
+    MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
-    cell.messageGameName.text = self.catch[indexPath.row];
+    cell.detailContext.text = self.catch[indexPath.row];
     
     
     return  cell;

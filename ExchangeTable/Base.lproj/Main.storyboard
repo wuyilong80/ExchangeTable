@@ -76,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ih-CH-bvY" id="Ja1-i1-MM5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameName:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-Oz-cCu">
@@ -106,8 +106,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="contentCell" destination="puA-Ba-cNv" id="4Y1-wB-YBW"/>
-                                            <outlet property="labelCell" destination="Xd0-Oz-cCu" id="0Vy-GE-tuu"/>
+                                            <outlet property="mainContextLabel" destination="puA-Ba-cNv" id="ska-1k-7Cm"/>
+                                            <outlet property="mainTitleLabel" destination="Xd0-Oz-cCu" id="FfJ-BU-3B7"/>
                                             <segue destination="VSY-hA-tHf" kind="show" identifier="messageSegue" id="8BX-K8-xEc"/>
                                         </connections>
                                     </tableViewCell>
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="1897.5" y="471.12676056338029"/>
         </scene>
-        <!--Detail&Message-->
+        <!--Detail-->
         <scene sceneID="RI9-G9-kSy">
             <objects>
                 <viewController id="VSY-hA-tHf" customClass="MessageViewController" sceneMemberID="viewController">
@@ -156,11 +156,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="151" id="AWz-as-hjp" customClass="MessageCellController">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="151" id="AWz-as-hjp" customClass="MessageCellController">
                                         <rect key="frame" x="0.0" y="28" width="320" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWz-as-hjp" id="m25-aE-uVJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxz-Bg-OYv">
@@ -180,7 +180,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="messageGameName" destination="fDp-kA-JmW" id="0ez-JF-YG9"/>
+                                            <outlet property="detailContext" destination="fDp-kA-JmW" id="EBw-1b-2BY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -188,7 +188,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail&amp;Message" id="l8K-jN-jeo"/>
+                    <navigationItem key="navigationItem" title="Detail" id="l8K-jN-jeo"/>
                     <connections>
                         <outlet property="tableView" destination="zMb-gW-tts" id="B79-ep-kAW"/>
                     </connections>
@@ -210,7 +210,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uzs-Wi-arB" id="MEx-T3-HIi">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface Note : NSObject
-@property (nonatomic) NSString *title;
-//@property (nonatomic) UIImage *image;
-@property (nonatomic) NSString *content;
-@property (nonatomic) NSString *messageNote;
 @property (nonatomic) NSString *gameid;
+@property (nonatomic) NSString *changeOutGame;
+@property (nonatomic) NSString *changeInGame;
+@property (nonatomic) NSString *contactMail;
+//@property (nonatomic) NSString *content;
+//@property (nonatomic) NSString *detailContext;
+
 
 @end

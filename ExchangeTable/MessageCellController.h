@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageCellController : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *messageGameName;
-@property (weak, nonatomic) IBOutlet UILabel *messageWantName;
+@property (weak, nonatomic) IBOutlet UILabel *detailContext;
 
 @end
