@@ -12,7 +12,7 @@
 
 @interface MessageViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSMutableArray *catch;
+@property (nonatomic) NSMutableArray *detailNotes;
 @end
 
 @implementation MessageViewController
@@ -20,14 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.catch = [NSMutableArray new];
-    [self.catch addObject:self.noteMessage.changeOutGame];
-    [self.catch addObject:self.noteMessage.changeInGame];
-    [self.catch addObject:self.noteMessage.contactMail];
+    self.tableView.estimatedRowHeight = 50;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.detailNotes = [NSMutableArray new];
+    [self.detailNotes addObject:self.dnotes.changeOutGame];
+    [self.detailNotes addObject:self.dnotes.changeInGame];
+    [self.detailNotes addObject:self.dnotes.contactMail];
 
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
     }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +42,18 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return self.catch.count;
+    return self.detailNotes.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
-    cell.detailContext.text = self.catch[indexPath.row];
+    cell.detailTitle.text=@"項目:";
+    
+    cell.detailContext.text = self.detailNotes[indexPath.row];
+    
+    
     
     
     return  cell;

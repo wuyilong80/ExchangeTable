@@ -88,7 +88,7 @@
         MessageViewController *message = segue.destinationViewController;
         NSIndexPath *i = [self.tableView indexPathForSelectedRow];
         Note *note=self.mainNotes[i.row];
-        message.noteMessage = note;
+        message.dnotes = note;
         
     }
 }

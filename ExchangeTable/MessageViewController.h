@@ -10,6 +10,6 @@
 #import "Note.h"
 
 @interface MessageViewController : UIViewController
-@property (nonatomic) NSString *information;
-@property (nonatomic) Note *noteMessage;
+//@property (nonatomic) NSString *information;
+@property (nonatomic) Note *dnotes;
 @end

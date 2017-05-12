@@ -10,5 +10,6 @@
 
 @interface MessageCellController : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *detailContext;
+@property (weak, nonatomic) IBOutlet UILabel *detailTitle;
 
 @end
