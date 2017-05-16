@@ -9,6 +9,7 @@
 #import "UploadTable.h"
 
 @interface UploadTable ()<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollScroll;
 
 @end
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    self.scrollScroll.frame = CGRectMake(0, 0, 320, 2000);
+    self.scrollScroll.contentSize = CGSizeMake(320 , 5000);
+    
 }
 
 - (void)didReceiveMemoryWarning {

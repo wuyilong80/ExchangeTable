@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
+		13420C8E1ECB1C2B00F65E98 /* CustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 13420C8D1ECB1C2B00F65E98 /* CustomData.m */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
@@ -26,6 +27,8 @@
 		1300E3B01EBB589B00714C64 /* TheModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheModel.m; sourceTree = "<group>"; };
 		1301A27E1EC5959C0031A251 /* UploadTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTable.h; sourceTree = "<group>"; };
 		1301A27F1EC5959C0031A251 /* UploadTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTable.m; sourceTree = "<group>"; };
+		13420C8C1ECB1C2B00F65E98 /* CustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomData.h; sourceTree = "<group>"; };
+		13420C8D1ECB1C2B00F65E98 /* CustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomData.m; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				1300E3B01EBB589B00714C64 /* TheModel.m */,
 				1301A27E1EC5959C0031A251 /* UploadTable.h */,
 				1301A27F1EC5959C0031A251 /* UploadTable.m */,
+				13420C8C1ECB1C2B00F65E98 /* CustomData.h */,
+				13420C8D1ECB1C2B00F65E98 /* CustomData.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */,
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,
+				13420C8E1ECB1C2B00F65E98 /* CustomData.m in Sources */,
 				13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */,
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,

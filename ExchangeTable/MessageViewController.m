@@ -9,10 +9,12 @@
 #import "MessageViewController.h"
 #import "Note.h"
 #import "MessageCellController.h"
+#import "CustomData.h"
 
 @interface MessageViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *detailNotes;
+@property (nonatomic) NSMutableArray<CustomData *> *detailDatas;
 @end
 
 @implementation MessageViewController
@@ -27,10 +29,18 @@
     [self.detailNotes addObject:self.dnotes.changeOutGame];
     [self.detailNotes addObject:self.dnotes.changeInGame];
     [self.detailNotes addObject:self.dnotes.contactMail];
+    
+    
+//    CustomData *detailData = [CustomData new];
+//    detailData.title = @"項目";
+    
 
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    }
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

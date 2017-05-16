@@ -93,6 +93,34 @@
     }
 }
 
+//- (void)didFinishUpdateNote:(Note *)note{
+//    
+//    NSURL *url = [NSURL URLWithString:@"http://localhost/note_update.php"];
+//    
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    [request setHTTPMethod:@"POST"];
+//    
+//    NSString *params = [NSString stringWithFormat:@"noteID=%@&text=%@&imageName=%@",note.noteID,note.text,note.imageName==nil?@"":note.imageName];
+//    
+//    NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
+//    
+//    [request setHTTPBody:data];
+//    
+//    [[[NSURLSession sharedSession]dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"error %@",error);
+//        }else{
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                //index
+//                NSUInteger index = [self.notes indexOfObject:note];
+//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+//                
+//                //reload
+//                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//                //[self saveToFile];
+//            });
+//        }
+//    }]resume];
 
 //#pragma mark UISearchBarDelegate
 //
