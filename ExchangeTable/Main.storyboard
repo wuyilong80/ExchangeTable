@@ -46,37 +46,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OK0-Uu-4ck">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYt-R7-Awt">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="bPf-cG-rbp"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.80190331715225416" blue="0.97087466591281513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="tYt-R7-Awt" firstAttribute="top" secondItem="OK0-Uu-4ck" secondAttribute="top" constant="64" id="LG9-cs-nHC"/>
-                                    <constraint firstItem="tYt-R7-Awt" firstAttribute="leading" secondItem="OK0-Uu-4ck" secondAttribute="leading" id="RBc-nv-e2i"/>
-                                    <constraint firstAttribute="trailing" secondItem="tYt-R7-Awt" secondAttribute="trailing" id="Tr0-ga-Q3W"/>
-                                    <constraint firstAttribute="bottom" secondItem="tYt-R7-Awt" secondAttribute="bottom" constant="263" id="YzF-gx-Nki"/>
-                                    <constraint firstItem="tYt-R7-Awt" firstAttribute="centerX" secondItem="OK0-Uu-4ck" secondAttribute="centerX" id="x3y-1g-9ud"/>
-                                </constraints>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T44-Mc-M15">
+                                <rect key="frame" x="40" y="110" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="OK0-Uu-4ck" firstAttribute="leading" secondItem="bLe-Zx-fbD" secondAttribute="leading" id="PRJ-0I-oWm"/>
-                            <constraint firstItem="OK0-Uu-4ck" firstAttribute="bottom" secondItem="Hpg-el-buc" secondAttribute="top" id="b12-id-zWd"/>
-                            <constraint firstItem="OK0-Uu-4ck" firstAttribute="top" secondItem="cPM-Of-TXz" secondAttribute="bottom" id="iCe-EY-PgA"/>
-                            <constraint firstAttribute="trailing" secondItem="OK0-Uu-4ck" secondAttribute="trailing" id="mLY-i2-6hp"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollScroll" destination="OK0-Uu-4ck" id="xly-r2-Bap"/>
+                        <outlet property="textView" destination="T44-Mc-M15" id="7Ar-Gn-aUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMf-lS-tXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
