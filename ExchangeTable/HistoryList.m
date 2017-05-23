@@ -7,16 +7,38 @@
 //
 
 #import "HistoryList.h"
+#import "HistoryListCellController.h"
 
-@interface HistoryList ()
+@interface HistoryList ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *historyListLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *hisArray;
 
 @end
 
 @implementation HistoryList
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.hisArray = [NSMutableArray new];
+        
+        [self.hisArray addObject:@"123456"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    if (self.hisArray.count > 0) {
+        self.historyListLabel.text = @"";
+    }else{
+        self.historyListLabel.text = @"Sorry, You don't have any Data!";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +46,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark UITableViewDataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = self.hisArray[indexPath.row];
+    return cell;
+}
 /*
 #pragma mark - Navigation
 

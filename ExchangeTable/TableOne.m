@@ -20,6 +20,14 @@
 
 @implementation TableOne
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+            self.mainNotes = [NSMutableArray new];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
@@ -29,7 +37,6 @@
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    self.mainNotes = [NSMutableArray new];
     [TheModel the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"%@",error);

@@ -10,4 +10,5 @@
 
 @interface HistoryListCellController : UITableViewCell
 
+
 @end

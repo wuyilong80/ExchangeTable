@@ -17,6 +17,8 @@
 		13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCB1EB213B200F7B74A /* Assets.xcassets */; };
 		13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */; };
 		13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CD71EB2174E00F7B74A /* TableOne.m */; };
+		13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9A81ED45CF0007F2125 /* HistoryList.m */; };
+		13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */; };
 		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,10 @@
 		13CC8CD01EB213B200F7B74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CC8CD61EB2174E00F7B74A /* TableOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableOne.h; sourceTree = "<group>"; };
 		13CC8CD71EB2174E00F7B74A /* TableOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableOne.m; sourceTree = "<group>"; };
+		13E4F9A71ED45CF0007F2125 /* HistoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryList.h; sourceTree = "<group>"; };
+		13E4F9A81ED45CF0007F2125 /* HistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryList.m; sourceTree = "<group>"; };
+		13E4F9AA1ED46032007F2125 /* HistoryListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCellController.h; sourceTree = "<group>"; };
+		13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCellController.m; sourceTree = "<group>"; };
 		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		EC99C9421EB5DA68007333F6 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -93,6 +99,10 @@
 				13B4C4751EC496D200F4F254 /* MessageCellController.m */,
 				1301A27E1EC5959C0031A251 /* UploadTable.h */,
 				1301A27F1EC5959C0031A251 /* UploadTable.m */,
+				13E4F9A71ED45CF0007F2125 /* HistoryList.h */,
+				13E4F9A81ED45CF0007F2125 /* HistoryList.m */,
+				13E4F9AA1ED46032007F2125 /* HistoryListCellController.h */,
+				13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */,
 				EC99C9421EB5DA68007333F6 /* Note.h */,
 				EC99C9431EB5DA68007333F6 /* Note.m */,
 				1300E3AF1EBB589B00714C64 /* TheModel.h */,
@@ -189,6 +199,8 @@
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,
 				1300E3B11EBB589B00714C64 /* TheModel.m in Sources */,
+				13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */,
+				13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */,
 				13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
