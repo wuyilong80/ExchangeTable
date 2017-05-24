@@ -58,6 +58,8 @@
                 note.gameid = er[@"id"];
                 note.changeInGame = er[@"WantGame"];
                 note.contactMail = er[@"mail"];
+                note.contactArea = er[@"Area"];
+                note.contactType = er[@"ChangeType"];
                 NSLog(@"%@",note.gameid);
                 [self.mainNotes addObject:note];
             }

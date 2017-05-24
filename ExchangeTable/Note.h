@@ -12,7 +12,10 @@
 @property (nonatomic) NSString *gameid;
 @property (nonatomic) NSString *changeOutGame;
 @property (nonatomic) NSString *changeInGame;
+@property (nonatomic) NSString *contactArea;
+@property (nonatomic) NSString *contactType;
 @property (nonatomic) NSString *contactMail;
+
 //@property (nonatomic) NSString *content;
 //@property (nonatomic) NSString *detailContext;
 

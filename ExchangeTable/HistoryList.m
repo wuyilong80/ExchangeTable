@@ -10,7 +10,6 @@
 #import "HistoryListCellController.h"
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel *historyListLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *hisArray;
 
@@ -34,11 +33,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    if (self.hisArray.count > 0) {
-        self.historyListLabel.text = @"";
-    }else{
-        self.historyListLabel.text = @"Sorry, You don't have any Data!";
-    }
+//    if (self.hisArray.count > 0) {
+//        self.historyListLabel.text = @"";
+//    }else{
+//        self.historyListLabel.text = @"Sorry, You don't have any Data!";
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +56,12 @@
     
     HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.hisArray[indexPath.row];
+    if (self.hisArray.count > 0) {
+        cell.textLabel.text = self.hisArray[indexPath.row];
+    }else{
+        cell.textLabel.text = @"Sorry, You don't have any Data!";
+    }
+    
     return cell;
 }
 /*

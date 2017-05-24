@@ -28,6 +28,8 @@
     self.detailNotes = [NSMutableArray new];
     [self.detailNotes addObject:self.dnotes.changeOutGame];
     [self.detailNotes addObject:self.dnotes.changeInGame];
+    [self.detailNotes addObject:self.dnotes.contactArea];
+    [self.detailNotes addObject:self.dnotes.contactType];
     [self.detailNotes addObject:self.dnotes.contactMail];
 
     self.tableView.dataSource = self;
@@ -35,7 +37,7 @@
     
     [self.tableView setTableFooterView:[UIView new]];
     
-    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"信箱:"];
+    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區",@"交換方式",@"信箱:"];
     
 }
 
