@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"%@",self.upLoadNote);
     if (self.presentingViewController) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancel:)];
     }
@@ -160,6 +160,12 @@
     [saveBtn.topAnchor constraintEqualToAnchor:textView5.bottomAnchor constant:30].active = YES;
     [saveBtn.widthAnchor constraintEqualToConstant:280].active = YES;
     [saveBtn addTarget:self action:@selector(saveBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    textView1.text = self.upLoadNote.changeOutGame;
+    textView2.text = self.upLoadNote.changeInGame;
+    textView3.text = self.upLoadNote.contactArea;
+    textView4.text = self.upLoadNote.contactType;
+    textView5.text = self.upLoadNote.contactMail;
 
 }
 

@@ -105,7 +105,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.sorryLabel setText:@""];
-                [self.adelegate didFinishSaveReLoad];
+//                [self.adelegate didFinishSaveReLoad];
                 NSInteger index = [self.data indexOfObject:unote];
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -120,6 +120,18 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.data removeObject:cancelNote];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"modifysegue"]) {
+        UploadTable *upLoad = segue.destinationViewController;
+        NSIndexPath *i = [self.tableView indexPathForSelectedRow];
+        Note *note=self.data[i.row];
+        NSLog(@"%@",note);
+        upLoad.upLoadNote = note;
+        upLoad.delegate = self;
+    }
 }
 /*
 #pragma mark - Navigation

@@ -32,6 +32,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Bu2-QO-G2y" kind="show" identifier="modifysegue" id="C4y-3c-9lL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -75,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMf-lS-tXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2754" y="1206"/>
+            <point key="canvasLocation" x="2861" y="1206"/>
         </scene>
         <!--GameList-->
         <scene sceneID="sGM-RX-HcX">
