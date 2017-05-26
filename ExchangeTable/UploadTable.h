@@ -10,6 +10,7 @@
 #import "Note.h"
 @protocol UploadTableDelegate <NSObject>
 -(void)didFinishSave:(Note *)unote;
+-(void)didFinishSaveCancel:(Note *)cancelNote;
 @end
 @interface UploadTable : UIViewController
 @property (nonatomic) Note *upLoadNote;

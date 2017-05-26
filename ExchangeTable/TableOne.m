@@ -100,7 +100,8 @@
                 note.contactArea = er[@"Area"];
                 note.contactType = er[@"ChangeType"];
                 NSLog(@"%@",note.gameid);
-                [self.mainNotes addObject:note];
+//                [self.mainNotes addObject:note];
+                [self.mainNotes insertObject:note atIndex:0];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
