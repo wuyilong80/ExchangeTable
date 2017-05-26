@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Note.h"
+@protocol UploadTableDelegate <NSObject>
+-(void)didFinishSave:(Note *)unote;
+@end
 @interface UploadTable : UIViewController
-
+@property (nonatomic) Note *upLoadNote;
+@property (weak,nonatomic) id <UploadTableDelegate> delegate;
 @end

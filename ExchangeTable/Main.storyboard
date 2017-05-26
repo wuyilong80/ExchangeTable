@@ -12,7 +12,7 @@
         <!--MyList-->
         <scene sceneID="qq3-gr-M2H">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="g9q-2k-DMb" customClass="HistoryList" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="historylist" automaticallyAdjustsScrollViewInsets="NO" id="g9q-2k-DMb" customClass="HistoryList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g7c-tM-7H7"/>
                         <viewControllerLayoutGuide type="bottom" id="yUN-P2-LP5"/>
@@ -47,7 +47,7 @@
                     <navigationItem key="navigationItem" title="MyList" id="jGo-XE-Pyo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P6t-wI-eXb">
                             <connections>
-                                <segue destination="Bu2-QO-G2y" kind="show" identifier="addSegue" id="mHj-2U-PZv"/>
+                                <action selector="addData:" destination="g9q-2k-DMb" id="V39-Op-Ohb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -62,7 +62,7 @@
         <!--Upload Table-->
         <scene sceneID="3Qf-HW-lvO">
             <objects>
-                <viewController id="Bu2-QO-G2y" customClass="UploadTable" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="upload" id="Bu2-QO-G2y" customClass="UploadTable" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cPM-Of-TXz"/>
                         <viewControllerLayoutGuide type="bottom" id="Hpg-el-buc"/>
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMf-lS-tXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2859.375" y="1205.2816901408451"/>
+            <point key="canvasLocation" x="2754" y="1206"/>
         </scene>
         <!--GameList-->
         <scene sceneID="sGM-RX-HcX">

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HistoryList : UIViewController
+@protocol HistoryListDelegate <NSObject>
+-(void)didFinishSaveReLoad;
+@end
 
+@interface HistoryList : UIViewController
+@property (nonatomic) id <HistoryListDelegate> adelegate;
 @end

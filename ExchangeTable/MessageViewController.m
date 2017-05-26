@@ -37,7 +37,7 @@
     
     [self.tableView setTableFooterView:[UIView new]];
     
-    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區",@"交換方式",@"信箱:"];
+    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:"];
     
 }
 

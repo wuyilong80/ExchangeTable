@@ -14,15 +14,22 @@
 
 @implementation UploadTable
 
+- (void) cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.presentingViewController) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancel:)];
+    }
     
     UIScrollView *scrollView  = [UIScrollView new];
     scrollView.frame = self.view.frame;
     scrollView.contentSize = CGSizeMake(320, 550);
     scrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:scrollView];
-//    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
     
     UIButton *doneBtn = [UIButton new];
     [doneBtn sizeToFit];
@@ -36,7 +43,6 @@
     [scrollView addSubview:label1];
     label1.translatesAutoresizingMaskIntoConstraints = NO;
     [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:10].active = YES;
-//    [label1.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:15].active = YES;
     
     UITextView *textView1 = [UITextView new];
     textView1.tag = 10;
@@ -151,6 +157,7 @@
     [saveBtn.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
     [saveBtn.topAnchor constraintEqualToAnchor:textView5.bottomAnchor constant:30].active = YES;
     [saveBtn.widthAnchor constraintEqualToConstant:280].active = YES;
+    [saveBtn addTarget:self action:@selector(saveBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
 
 }
 
@@ -164,11 +171,13 @@
         self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
+-(void)saveBtnPressed:(UIButton *)sender{
+    
+    [self.delegate didFinishSave:self.upLoadNote];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark UIScrollViewDelegate
-
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-
-//}
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     
@@ -193,6 +202,22 @@
             self.view.frame = CGRectMake(0, -250, self.view.bounds.size.width, self.view.bounds.size.height);
         }];
     }
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    
+    if (textView.tag == 10) {
+        self.upLoadNote.changeOutGame = textView.text;
+    }else if (textView.tag ==12){
+        self.upLoadNote.changeInGame = textView.text;
+    }else if (textView.tag ==13){
+        self.upLoadNote.contactArea = textView.text;
+    }else if (textView.tag == 14){
+        self.upLoadNote.contactType = textView.text;
+    }else if (textView.tag == 15){
+        self.upLoadNote.contactMail = textView.text;
+    }
+
 }
 
 
