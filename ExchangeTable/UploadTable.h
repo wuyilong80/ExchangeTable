@@ -11,6 +11,7 @@
 @protocol UploadTableDelegate <NSObject>
 -(void)didFinishSave:(Note *)unote;
 -(void)didFinishSaveCancel:(Note *)cancelNote;
+-(void)didFinishDidUpdate:(Note *)updateNote;
 @end
 @interface UploadTable : UIViewController
 @property (nonatomic) Note *upLoadNote;

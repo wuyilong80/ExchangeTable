@@ -10,11 +10,14 @@
 #import "HistoryListCellController.h"
 #import "UploadTable.h"
 #import "Note.h"
+@import FBSDKLoginKit;
+@import FBSDKCoreKit;
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource,UploadTableDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *data;
 @property (nonatomic) UILabel *sorryLabel;
+@property (nonatomic) NSString *emailCatch;
 @end
 
 @implementation HistoryList
@@ -29,6 +32,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
+    [fbDict setValue:@"email" forKey:@"fields"];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
+        
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            NSDictionary *info = result;
+            NSLog(@"email = %@",info[@"email"]);
+            if (info[@"email"] == nil) {
+                self.navigationItem.rightBarButtonItem.enabled = NO;
+            }else{
+                self.emailCatch = info[@"email"];
+            }
+        }];
+    }
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -50,6 +69,7 @@
 - (IBAction)addData:(id)sender {
 
     Note *upNote = [Note new];
+    upNote.userID = self.emailCatch;
     [self.data addObject:upNote];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.data.count-1 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -120,6 +140,37 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.data removeObject:cancelNote];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void)didFinishDidUpdate:(Note *)updateNote{
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost/update_note.php"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@&gameid=%@",updateNote.changeOutGame,updateNote.changeInGame,updateNote.contactArea,updateNote.contactType,updateNote.contactMail,updateNote.gameid];
+    NSLog(@"%@",updateNote.gameid);
+    
+    NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPBody:data];
+    
+    [[[NSURLSession sharedSession]dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error %@",error);
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.sorryLabel setText:@""];
+                //                [self.adelegate didFinishSaveReLoad];
+                NSInteger index = [self.data indexOfObject:updateNote];
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            });
+        }
+    }]resume];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

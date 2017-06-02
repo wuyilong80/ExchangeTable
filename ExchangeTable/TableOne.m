@@ -12,9 +12,12 @@
 #import "TheModel.h"
 #import "MessageViewController.h"
 #import "HistoryList.h"
+#import "LogInViewController.h"
+#import "SignInViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+@import FBSDKCoreKit;
 
-@interface TableOne ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,HistoryListDelegate,UITabBarControllerDelegate>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface TableOne ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UISearchControllerDelegate,FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *mainNotes;
 @end
@@ -36,11 +39,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.frame = CGRectMake(self.view.bounds.size.width-100, 25, 90, loginButton.bounds.size.height);
+    [self.navigationController.view addSubview:loginButton];
+    
+    loginButton.readPermissions = @[@"email"];
+    loginButton.delegate = self;
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
+//    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
+//    [fbDict setValue:@"email" forKey:@"fields"];
+//    if ([FBSDKAccessToken currentAccessToken]) {
+//        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
+//        
+//        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+//            NSDictionary *info = result;
+//            NSLog(@"email = %@",info[@"email"]);
+//        }];
+//    }
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.searchBar.delegate = self;
-    
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
@@ -49,9 +69,27 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+              error:(NSError *)error{
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+}
+
+//- (IBAction)logInBtn:(id)sender {
+//    
+//    LogInViewController *logInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"lgvc"];
+//    
+//    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:logInVC];
+//        
+//    [self presentViewController:navi animated:YES completion:nil];
+//}
+
 
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return self.mainNotes.count;
 }
 
@@ -94,13 +132,12 @@
                 NSDictionary *er=rows[k];
                 
                 note.gameid = er[@"id"];
-                note.changeOutGame=er[@"GameName"];
+                note.changeOutGame = er[@"GameName"];
                 note.changeInGame = er[@"WantGame"];
                 note.contactMail = er[@"mail"];
                 note.contactArea = er[@"Area"];
                 note.contactType = er[@"ChangeType"];
-                NSLog(@"%@",note.gameid);
-//                [self.mainNotes addObject:note];
+
                 [self.mainNotes insertObject:note atIndex:0];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -110,31 +147,6 @@
             NSLog(@"mapd:mysqli_errno %@",mysqli_errno);
         }
     }];
-}
-
-#pragma mark UISearchBarDelegate
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    self.navigationController.navigationBar.hidden = TRUE;
-    CGRect r = self.view.frame;
-    r.origin.y = -44;
-    r.size.height += 44;
-    self.view.frame = r;
-    
-    [searchBar setShowsCancelButton:YES animated:YES];
-}
-
-
--(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    [searchBar setShowsCancelButton:NO animated:YES];
-}
-
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar resignFirstResponder];
-    self.navigationController.navigationBar.hidden = false;
 }
 
 /*

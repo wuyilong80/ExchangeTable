@@ -181,17 +181,26 @@
 
 -(void)saveBtnPressed:(UIButton *)sender{
     
-    
     UITextView *textView1 = [self.view viewWithTag:10];
     UITextView *textView2 = [self.view viewWithTag:12];
     UITextView *textView3 = [self.view viewWithTag:13];
     UITextView *textView4 = [self.view viewWithTag:14];
     UITextView *textView5 = [self.view viewWithTag:15];
     
-    if (textView1.text.length != 0&&textView2.text.length != 0&&textView3.text.length != 0&&textView4.text.length != 0&&textView5.text.length != 0) {
+    if (self.presentingViewController) {
         
-        [self.delegate didFinishSave:self.upLoadNote];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (textView1.text.length != 0&&textView2.text.length != 0&&textView3.text.length != 0&&textView4.text.length != 0&&textView5.text.length != 0) {
+            
+            [self.delegate didFinishSave:self.upLoadNote];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }else{
+        
+        if (textView1.text.length != 0&&textView2.text.length != 0&&textView3.text.length != 0&&textView4.text.length != 0&&textView5.text.length != 0) {
+            
+        [self.delegate didFinishDidUpdate:self.upLoadNote];
+        [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 

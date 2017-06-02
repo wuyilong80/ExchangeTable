@@ -10,6 +10,8 @@
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
 		1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1315DBFA1ECD4E53006F004A /* Main.storyboard */; };
+		13B32DB91EDEB2E100A24321 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B32DB81EDEB2E100A24321 /* LogInViewController.m */; };
+		13B32DBC1EDEB3EA00A24321 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
@@ -19,6 +21,9 @@
 		13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CD71EB2174E00F7B74A /* TableOne.m */; };
 		13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9A81ED45CF0007F2125 /* HistoryList.m */; };
 		13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */; };
+		13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B221EE0400D00781CDF /* Bolts.framework */; };
+		13EA7B261EE0400D00781CDF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */; };
+		13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */; };
 		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
 /* End PBXBuildFile section */
@@ -29,6 +34,10 @@
 		1301A27E1EC5959C0031A251 /* UploadTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTable.h; sourceTree = "<group>"; };
 		1301A27F1EC5959C0031A251 /* UploadTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTable.m; sourceTree = "<group>"; };
 		1315DBFA1ECD4E53006F004A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		13B32DB71EDEB2E100A24321 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		13B32DB81EDEB2E100A24321 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		13B32DBA1EDEB3EA00A24321 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
@@ -46,6 +55,9 @@
 		13E4F9A81ED45CF0007F2125 /* HistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryList.m; sourceTree = "<group>"; };
 		13E4F9AA1ED46032007F2125 /* HistoryListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCellController.h; sourceTree = "<group>"; };
 		13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCellController.m; sourceTree = "<group>"; };
+		13EA7B221EE0400D00781CDF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		EC99C9421EB5DA68007333F6 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -57,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */,
+				13EA7B261EE0400D00781CDF /* FBSDKCoreKit.framework in Frameworks */,
+				13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +98,17 @@
 		13CC8CBE1EB213B200F7B74A /* ExchangeTable */ = {
 			isa = PBXGroup;
 			children = (
+				13EA7B1B1EE01C8A00781CDF /* framework */,
 				13CC8CC21EB213B200F7B74A /* AppDelegate.h */,
 				13CC8CC31EB213B200F7B74A /* AppDelegate.m */,
 				1315DBFA1ECD4E53006F004A /* Main.storyboard */,
 				13CC8CCB1EB213B200F7B74A /* Assets.xcassets */,
 				13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */,
 				13CC8CD01EB213B200F7B74A /* Info.plist */,
+				13B32DB71EDEB2E100A24321 /* LogInViewController.h */,
+				13B32DB81EDEB2E100A24321 /* LogInViewController.m */,
+				13B32DBA1EDEB3EA00A24321 /* SignInViewController.h */,
+				13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */,
 				13CC8CD61EB2174E00F7B74A /* TableOne.h */,
 				13CC8CD71EB2174E00F7B74A /* TableOne.m */,
 				13C916E01EB8B5C6009E1CD3 /* CellController.h */,
@@ -118,6 +138,16 @@
 			);
 			name = "Supporting Files";
 			path = ExchangeTable;
+			sourceTree = "<group>";
+		};
+		13EA7B1B1EE01C8A00781CDF /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				13EA7B221EE0400D00781CDF /* Bolts.framework */,
+				13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */,
+				13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */,
+			);
+			path = framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,10 +225,12 @@
 				13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */,
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,
+				13B32DBC1EDEB3EA00A24321 /* SignInViewController.m in Sources */,
 				13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */,
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,
 				1300E3B11EBB589B00714C64 /* TheModel.m in Sources */,
+				13B32DB91EDEB2E100A24321 /* LogInViewController.m in Sources */,
 				13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */,
 				13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */,
 				13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */,
@@ -264,6 +296,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -306,6 +339,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -313,11 +347,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExchangeTable/framework",
+				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.www.ExchangeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -325,11 +365,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExchangeTable/framework",
+				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.www.ExchangeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
