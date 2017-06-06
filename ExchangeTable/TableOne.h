@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TableOne : UIViewController
-
+@property (weak,nonatomic) IBOutlet UINavigationBar *naviBar;
 @end

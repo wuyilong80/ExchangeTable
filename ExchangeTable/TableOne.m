@@ -12,8 +12,6 @@
 #import "TheModel.h"
 #import "MessageViewController.h"
 #import "HistoryList.h"
-#import "LogInViewController.h"
-#import "SignInViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @import FBSDKCoreKit;
 
@@ -41,24 +39,13 @@
     [super viewDidLoad];
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.frame = CGRectMake(self.view.bounds.size.width-100, 25, 90, loginButton.bounds.size.height);
+    loginButton.frame = CGRectMake(self.view.bounds.size.width-95, 30, 90, loginButton.bounds.size.height);
     [self.navigationController.view addSubview:loginButton];
     
     loginButton.readPermissions = @[@"email"];
     loginButton.delegate = self;
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
-    
-//    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
-//    [fbDict setValue:@"email" forKey:@"fields"];
-//    if ([FBSDKAccessToken currentAccessToken]) {
-//        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
-//        
-//        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-//            NSDictionary *info = result;
-//            NSLog(@"email = %@",info[@"email"]);
-//        }];
-//    }
-    
+        
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 50;
@@ -75,17 +62,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+    
+    [[[FBSDKLoginManager alloc]init]logOut];
 }
-
-//- (IBAction)logInBtn:(id)sender {
-//    
-//    LogInViewController *logInVC = [self.storyboard instantiateViewControllerWithIdentifier:@"lgvc"];
-//    
-//    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:logInVC];
-//        
-//    [self presentViewController:navi animated:YES completion:nil];
-//}
-
 
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

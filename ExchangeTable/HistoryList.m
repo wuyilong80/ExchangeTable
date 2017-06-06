@@ -10,10 +10,13 @@
 #import "HistoryListCellController.h"
 #import "UploadTable.h"
 #import "Note.h"
+#import "CatchTheModel.h"
 @import FBSDKLoginKit;
 @import FBSDKCoreKit;
+#import "AppDelegate.h"
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource,UploadTableDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNote;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *data;
 @property (nonatomic) UILabel *sorryLabel;
@@ -30,9 +33,10 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated{
     
+    [super viewWillAppear:animated];
+    self.addNote.enabled = NO;
     NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
     [fbDict setValue:@"email" forKey:@"fields"];
     if ([FBSDKAccessToken currentAccessToken]) {
@@ -41,33 +45,30 @@
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             NSDictionary *info = result;
             NSLog(@"email = %@",info[@"email"]);
-            if (info[@"email"] == nil) {
-                self.navigationItem.rightBarButtonItem.enabled = NO;
-            }else{
+            if (info[@"email"] != nil) {
+                self.addNote.enabled = YES;
                 self.emailCatch = info[@"email"];
+                [self didFinishSaveReLoad];
             }
         }];
     }
     
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-        
-    if (self.data.count == 0) {
-        self.sorryLabel = [UILabel new];
-        [self.sorryLabel setText:@"Sorry, You don't have any Data!"];
-        [self.view addSubview:self.sorryLabel];
-        self.sorryLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.sorryLabel.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:15].active = YES;
-        [self.sorryLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
-    }
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)addData:(id)sender {
-
+    
     Note *upNote = [Note new];
     upNote.userID = self.emailCatch;
     [self.data addObject:upNote];
@@ -94,41 +95,40 @@
     HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     Note *note = self.data[indexPath.row];
-    if (self.data.count > 0) {
         cell.textLabel.text = note.changeOutGame;
-    }else{
-        cell.textLabel.text = @"Sorry, You don't have any Data!";
-    }
-    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:YES];
 }
 
 #pragma mark UploadTableDelegate
 
 -(void)didFinishSave:(Note *)unote{
     
-        NSURL *url = [NSURL URLWithString:@"http://localhost/note_add.php"];
+    NSString *internet = [NSString stringWithFormat:@"http://%@/note_add.php",INTERNET];
+    NSURL *url = [NSURL URLWithString:internet];
     
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        [request setHTTPMethod:@"POST"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
     
-        NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@",unote.changeOutGame,unote.changeInGame,unote.contactArea,unote.contactType,unote.contactMail];
+    NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@&UserID=%@",unote.changeOutGame,unote.changeInGame,unote.contactArea,unote.contactType,unote.contactMail,unote.userID];
     
-        NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
     
-        [request setHTTPBody:data];
+    [request setHTTPBody:data];
     
     [[[NSURLSession sharedSession]dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"error %@",error);
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self.sorryLabel setText:@""];
-//                [self.adelegate didFinishSaveReLoad];
-                NSInteger index = [self.data indexOfObject:unote];
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.tableView reloadData];
             });
         }
     }]resume];
@@ -144,7 +144,8 @@
 
 -(void)didFinishDidUpdate:(Note *)updateNote{
     
-    NSURL *url = [NSURL URLWithString:@"http://localhost/update_note.php"];
+    NSString *internet = [NSString stringWithFormat:@"http://%@/update_note.php",INTERNET];
+    NSURL *url = [NSURL URLWithString:internet];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -163,14 +164,50 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.sorryLabel setText:@""];
-                //                [self.adelegate didFinishSaveReLoad];
                 NSInteger index = [self.data indexOfObject:updateNote];
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             });
         }
     }]resume];
+    
+}
 
+-(void)didFinishSaveReLoad{
+    
+    [CatchTheModel userid:(NSString*)self.emailCatch the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
+    
+        NSLog(@"%@",error);
+        NSDictionary *pd;
+        NSError *err_json;
+        
+        pd = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err_json];
+        NSNumber *mysqli_errno = pd[@"mysqli_errno"];
+        
+        if([mysqli_errno intValue] == 0){
+            
+            [self.data removeAllObjects];
+            NSArray *rows = pd[@"rows"];
+            for (int k = 0; k < rows.count; k ++) {
+                Note *note = [Note new];
+                NSDictionary *er=rows[k];
+                
+                note.gameid = er[@"id"];
+                note.changeOutGame = er[@"GameName"];
+                note.changeInGame = er[@"WantGame"];
+                note.contactMail = er[@"mail"];
+                note.contactArea = er[@"Area"];
+                note.contactType = er[@"ChangeType"];
+                
+                [self.data insertObject:note atIndex:0];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }else{
+            NSLog(@"mapd:mysqli_errno %@",mysqli_errno);
+        }
+    }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -185,13 +222,13 @@
     }
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

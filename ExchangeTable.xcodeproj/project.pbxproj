@@ -10,8 +10,9 @@
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
 		1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1315DBFA1ECD4E53006F004A /* Main.storyboard */; };
-		13B32DB91EDEB2E100A24321 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B32DB81EDEB2E100A24321 /* LogInViewController.m */; };
-		13B32DBC1EDEB3EA00A24321 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */; };
+		137BDBD31EE647150069BB7A /* AllList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD21EE647150069BB7A /* AllList.png */; };
+		137BDBD51EE649400069BB7A /* MyList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD41EE649400069BB7A /* MyList.png */; };
+		137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD61EE6563F0069BB7A /* images.jpeg */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
@@ -21,6 +22,7 @@
 		13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CD71EB2174E00F7B74A /* TableOne.m */; };
 		13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9A81ED45CF0007F2125 /* HistoryList.m */; };
 		13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */; };
+		13E813B51EE15EBF0045DAF5 /* CatchTheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */; };
 		13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B221EE0400D00781CDF /* Bolts.framework */; };
 		13EA7B261EE0400D00781CDF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */; };
 		13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */; };
@@ -34,10 +36,9 @@
 		1301A27E1EC5959C0031A251 /* UploadTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTable.h; sourceTree = "<group>"; };
 		1301A27F1EC5959C0031A251 /* UploadTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTable.m; sourceTree = "<group>"; };
 		1315DBFA1ECD4E53006F004A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		13B32DB71EDEB2E100A24321 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		13B32DB81EDEB2E100A24321 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		13B32DBA1EDEB3EA00A24321 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		137BDBD21EE647150069BB7A /* AllList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllList.png; sourceTree = "<group>"; };
+		137BDBD41EE649400069BB7A /* MyList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyList.png; sourceTree = "<group>"; };
+		137BDBD61EE6563F0069BB7A /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
@@ -55,6 +56,8 @@
 		13E4F9A81ED45CF0007F2125 /* HistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryList.m; sourceTree = "<group>"; };
 		13E4F9AA1ED46032007F2125 /* HistoryListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCellController.h; sourceTree = "<group>"; };
 		13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCellController.m; sourceTree = "<group>"; };
+		13E813B31EE15EBF0045DAF5 /* CatchTheModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchTheModel.h; sourceTree = "<group>"; };
+		13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchTheModel.m; sourceTree = "<group>"; };
 		13EA7B221EE0400D00781CDF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -98,6 +101,9 @@
 		13CC8CBE1EB213B200F7B74A /* ExchangeTable */ = {
 			isa = PBXGroup;
 			children = (
+				137BDBD21EE647150069BB7A /* AllList.png */,
+				137BDBD61EE6563F0069BB7A /* images.jpeg */,
+				137BDBD41EE649400069BB7A /* MyList.png */,
 				13EA7B1B1EE01C8A00781CDF /* framework */,
 				13CC8CC21EB213B200F7B74A /* AppDelegate.h */,
 				13CC8CC31EB213B200F7B74A /* AppDelegate.m */,
@@ -105,10 +111,6 @@
 				13CC8CCB1EB213B200F7B74A /* Assets.xcassets */,
 				13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */,
 				13CC8CD01EB213B200F7B74A /* Info.plist */,
-				13B32DB71EDEB2E100A24321 /* LogInViewController.h */,
-				13B32DB81EDEB2E100A24321 /* LogInViewController.m */,
-				13B32DBA1EDEB3EA00A24321 /* SignInViewController.h */,
-				13B32DBB1EDEB3EA00A24321 /* SignInViewController.m */,
 				13CC8CD61EB2174E00F7B74A /* TableOne.h */,
 				13CC8CD71EB2174E00F7B74A /* TableOne.m */,
 				13C916E01EB8B5C6009E1CD3 /* CellController.h */,
@@ -127,6 +129,8 @@
 				1301A27F1EC5959C0031A251 /* UploadTable.m */,
 				1300E3AF1EBB589B00714C64 /* TheModel.h */,
 				1300E3B01EBB589B00714C64 /* TheModel.m */,
+				13E813B31EE15EBF0045DAF5 /* CatchTheModel.h */,
+				13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -181,6 +185,7 @@
 				TargetAttributes = {
 					13CC8CBB1EB213B200F7B74A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 2QP22QTHNQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -210,7 +215,10 @@
 			files = (
 				1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */,
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
+				137BDBD51EE649400069BB7A /* MyList.png in Resources */,
+				137BDBD31EE647150069BB7A /* AllList.png in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,
+				137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,12 +233,11 @@
 				13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */,
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,
-				13B32DBC1EDEB3EA00A24321 /* SignInViewController.m in Sources */,
+				13E813B51EE15EBF0045DAF5 /* CatchTheModel.m in Sources */,
 				13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */,
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,
 				1300E3B11EBB589B00714C64 /* TheModel.m in Sources */,
-				13B32DB91EDEB2E100A24321 /* LogInViewController.m in Sources */,
 				13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */,
 				13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */,
 				13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */,
@@ -347,12 +354,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2QP22QTHNQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.www.ExchangeTable;
@@ -365,12 +373,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2QP22QTHNQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.www.ExchangeTable;

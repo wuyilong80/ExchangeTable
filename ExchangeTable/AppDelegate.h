@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define INTERNET @"192.168.151.74"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
