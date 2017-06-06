@@ -38,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1];
+    
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.frame = CGRectMake(self.view.bounds.size.width-95, 30, 90, loginButton.bounds.size.height);
     [self.navigationController.view addSubview:loginButton];
@@ -77,6 +79,13 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Note *note=self.mainNotes[indexPath.row];
     cell.mainContextLabel.text=note.changeOutGame;
+    cell.backgroundColor = [UIColor colorWithRed:0.86 green:0.85 blue:0.78 alpha:0.8];
+    cell.layer.cornerRadius = 10;
+    cell.layer.borderWidth = 2;
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.layer.shadowOpacity=0.8;
+    cell.layer.shadowColor=[UIColor lightGrayColor].CGColor;
+    cell.layer.shadowRadius = 1;
     
     return  cell;
 }

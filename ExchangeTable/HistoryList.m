@@ -14,6 +14,7 @@
 @import FBSDKLoginKit;
 @import FBSDKCoreKit;
 #import "AppDelegate.h"
+#import "DeleteModel.h"
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource,UploadTableDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addNote;
@@ -95,13 +96,24 @@
     HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     Note *note = self.data[indexPath.row];
-        cell.textLabel.text = note.changeOutGame;
+    cell.textLabel.text = note.changeOutGame;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    Note *note = self.data[indexPath.row];
+    
+    [DeleteModel userid:(NSString*)self.emailCatch gameid:(NSString*)note.gameid the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [self.data removeObjectAtIndex:indexPath.row];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
+
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
     [super setEditing:editing animated:animated];
     [self.tableView setEditing:editing animated:YES];
@@ -176,7 +188,7 @@
 -(void)didFinishSaveReLoad{
     
     [CatchTheModel userid:(NSString*)self.emailCatch the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
-    
+        
         NSLog(@"%@",error);
         NSDictionary *pd;
         NSError *err_json;

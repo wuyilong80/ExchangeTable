@@ -153,12 +153,16 @@
     [saveBtn setTitle:@"儲存" forState:UIControlStateNormal];
     [saveBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [saveBtn setBackgroundColor:[UIColor colorWithRed:0.87 green:0.42 blue:0.11 alpha:0.9]];
+    saveBtn.layer.shadowOpacity = 0.5;
+    saveBtn.layer.shadowOffset = CGSizeMake(3, 5);
+    saveBtn.layer.shadowColor = [UIColor blackColor].CGColor;
+    
     saveBtn.layer.cornerRadius = 10;
     [scrollView addSubview:saveBtn];
     saveBtn.translatesAutoresizingMaskIntoConstraints = NO;
     [saveBtn.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
     [saveBtn.topAnchor constraintEqualToAnchor:textView5.bottomAnchor constant:30].active = YES;
-    [saveBtn.widthAnchor constraintEqualToConstant:280].active = YES;
+    [saveBtn.widthAnchor constraintEqualToConstant:self.view.bounds.size.width-40].active = YES;
     [saveBtn addTarget:self action:@selector(saveBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     textView1.text = self.upLoadNote.changeOutGame;
