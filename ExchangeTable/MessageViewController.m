@@ -31,14 +31,15 @@
     [self.detailNotes addObject:self.dnotes.contactArea];
     [self.detailNotes addObject:self.dnotes.contactType];
     [self.detailNotes addObject:self.dnotes.contactMail];
-//    [self.detailNotes addObject:self.dnotes.date];
+    
+    [self.detailNotes addObject:self.dnotes.date];
 
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     [self.tableView setTableFooterView:[UIView new]];
     
-    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期"];
+    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期:"];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
 }
@@ -65,6 +66,7 @@
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
+    
     
     cell.detailContext.text = self.detailNotes[indexPath.row];
     

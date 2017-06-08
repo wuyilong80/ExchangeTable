@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="1897.5" y="471.12676056338029"/>
         </scene>
-        <!--Detail-->
+        <!--詳細資訊-->
         <scene sceneID="RI9-G9-kSy">
             <objects>
                 <viewController id="VSY-hA-tHf" customClass="MessageViewController" sceneMemberID="viewController">
@@ -237,7 +237,7 @@
                             <outletCollection property="gestureRecognizers" destination="znf-kp-BSu" appends="YES" id="d9E-Ux-06f"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="l8K-jN-jeo"/>
+                    <navigationItem key="navigationItem" title="詳細資訊" id="l8K-jN-jeo"/>
                     <connections>
                         <outlet property="tableView" destination="zMb-gW-tts" id="B79-ep-kAW"/>
                     </connections>

@@ -41,7 +41,7 @@
     self.tableView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.frame = CGRectMake(self.view.bounds.size.width-95, 25, 90, loginButton.bounds.size.height);
+    loginButton.frame = CGRectMake(self.view.bounds.size.width-100, 25, 90, loginButton.bounds.size.height);
     loginButton.layer.borderWidth = 0;
     loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     loginButton.layer.shadowOpacity = 0.8;
@@ -126,7 +126,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 note.contactMail = er[@"mail"];
                 note.contactArea = er[@"Area"];
                 note.contactType = er[@"ChangeType"];
-
+                note.date = er[@"Date"];
+                
                 [self.mainNotes insertObject:note atIndex:0];
             }
             dispatch_async(dispatch_get_main_queue(), ^{

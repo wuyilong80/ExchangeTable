@@ -22,6 +22,7 @@
 @property (nonatomic) NSMutableArray <Note *> *data;
 @property (nonatomic) UILabel *sorryLabel;
 @property (nonatomic) NSString *emailCatch;
+//@property (nonatomic) BOOL ddddd;
 @end
 
 @implementation HistoryList
@@ -65,9 +66,29 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+//    self.ddddd = NO;
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc]initWithTitle:@"刪除" style:UIBarButtonItemStylePlain target:self action:@selector(deletedelete)];
+    
+    self.navigationItem.leftBarButtonItem = delete;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+-(void) deletedelete {
+    
+//    if (self.ddddd == NO) {
+//        [self.tableView setEditing:YES];
+//        self.ddddd = YES;
+//    }else{
+//        [self.tableView setEditing:NO];
+//        self.ddddd = NO;
+//    }
+    
+    if (self.tableView.isEditing == NO) {
+        [self.tableView setEditing:YES];
+    }else{
+        [self.tableView setEditing:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -134,7 +155,12 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@&UserID=%@",unote.changeOutGame,unote.changeInGame,unote.contactArea,unote.contactType,unote.contactMail,unote.userID];
+    NSDateFormatter *time = [[NSDateFormatter alloc]init];
+    [time setDateStyle:NSDateFormatterLongStyle];
+    NSDate *poDate = [[NSDate alloc]init];
+    unote.date = [time stringFromDate:poDate];
+    
+    NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@&UserID=%@&Date=%@",unote.changeOutGame,unote.changeInGame,unote.contactArea,unote.contactType,unote.contactMail,unote.userID,unote.date];
     
     NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
     
