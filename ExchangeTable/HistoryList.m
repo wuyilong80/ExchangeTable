@@ -37,6 +37,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+    
+    [self.data removeAllObjects];
+    [self.tableView reloadData];
+
     self.addNote.enabled = NO;
     NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
     [fbDict setValue:@"email" forKey:@"fields"];
@@ -46,14 +50,14 @@
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             NSDictionary *info = result;
             NSLog(@"email = %@",info[@"email"]);
-            if (info[@"email"] != nil) {
+            NSString *str = info[@"email"];
+            if (str.length != 0) {
                 self.addNote.enabled = YES;
                 self.emailCatch = info[@"email"];
                 [self didFinishSaveReLoad];
             }
         }];
     }
-    
 }
 
 - (void)viewDidLoad {
@@ -63,6 +67,7 @@
     self.tableView.dataSource = self;
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

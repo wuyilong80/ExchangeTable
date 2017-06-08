@@ -31,14 +31,20 @@
     [self.detailNotes addObject:self.dnotes.contactArea];
     [self.detailNotes addObject:self.dnotes.contactType];
     [self.detailNotes addObject:self.dnotes.contactMail];
+//    [self.detailNotes addObject:self.dnotes.date];
 
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     [self.tableView setTableFooterView:[UIView new]];
     
-    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:"];
+    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+}
+- (IBAction)swipe:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,6 +16,7 @@
 @property (nonatomic) NSString *contactType;
 @property (nonatomic) NSString *contactMail;
 @property (nonatomic) NSString *userID;
+@property (nonatomic) NSDate *date;
 //@property (nonatomic) NSString *content;
 //@property (nonatomic) NSString *detailContext;
 

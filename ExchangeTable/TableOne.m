@@ -38,10 +38,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.frame = CGRectMake(self.view.bounds.size.width-95, 30, 90, loginButton.bounds.size.height);
+    loginButton.frame = CGRectMake(self.view.bounds.size.width-95, 25, 90, loginButton.bounds.size.height);
+    loginButton.layer.borderWidth = 0;
+    loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    loginButton.layer.shadowOpacity = 0.8;
+    loginButton.layer.shadowOffset = CGSizeMake(-2, 4);
+    loginButton.layer.shadowColor = [UIColor blackColor].CGColor;
+
     [self.navigationController.view addSubview:loginButton];
     
     loginButton.readPermissions = @[@"email"];
@@ -66,6 +72,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
     
     [[[FBSDKLoginManager alloc]init]logOut];
+    
 }
 
 #pragma mark UITableViewDataSource
@@ -79,13 +86,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Note *note=self.mainNotes[indexPath.row];
     cell.mainContextLabel.text=note.changeOutGame;
-    cell.backgroundColor = [UIColor colorWithRed:0.86 green:0.85 blue:0.78 alpha:0.8];
-    cell.layer.cornerRadius = 10;
-    cell.layer.borderWidth = 2;
-    cell.layer.borderColor = [UIColor blackColor].CGColor;
-    cell.layer.shadowOpacity=0.8;
-    cell.layer.shadowColor=[UIColor lightGrayColor].CGColor;
-    cell.layer.shadowRadius = 1;
+    
     
     return  cell;
 }

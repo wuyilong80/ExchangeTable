@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MyList-->
+        <!--我的清單-->
         <scene sceneID="qq3-gr-M2H">
             <objects>
                 <viewController storyboardIdentifier="historylist" automaticallyAdjustsScrollViewInsets="NO" id="g9q-2k-DMb" customClass="HistoryList" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                             <constraint firstItem="fef-hz-yCX" firstAttribute="leading" secondItem="alE-L5-d25" secondAttribute="leading" id="rKx-rE-ldT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MyList" id="jGo-XE-Pyo">
+                    <navigationItem key="navigationItem" title="我的清單" id="jGo-XE-Pyo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P6t-wI-eXb">
                             <connections>
                                 <action selector="addData:" destination="g9q-2k-DMb" id="V39-Op-Ohb"/>
@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="2861" y="1206"/>
         </scene>
-        <!--GameList-->
+        <!--遊戲清單-->
         <scene sceneID="sGM-RX-HcX">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="MLF-cm-JeI" customClass="TableOne" sceneMemberID="viewController">
@@ -151,7 +151,7 @@
                             <constraint firstItem="3NO-uU-UZV" firstAttribute="leading" secondItem="TUJ-gy-HSI" secondAttribute="leading" id="e5R-zJ-kHa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GameList" id="BYI-Rt-hfS"/>
+                    <navigationItem key="navigationItem" title="遊戲清單" id="BYI-Rt-hfS"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="lwn-Z3-AIg" id="dqc-fF-zH3"/>
                         <outlet property="tableView" destination="3NO-uU-UZV" id="RQ5-Np-f5I"/>
@@ -226,12 +226,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zMb-gW-tts" firstAttribute="leading" secondItem="Cdl-fm-EMo" secondAttribute="leading" id="Hsn-nM-Vvx"/>
                             <constraint firstItem="zMb-gW-tts" firstAttribute="top" secondItem="Cdl-fm-EMo" secondAttribute="top" id="LEy-Lq-wjn"/>
                             <constraint firstAttribute="bottom" secondItem="zMb-gW-tts" secondAttribute="bottom" id="fbC-2R-5PP"/>
                             <constraint firstAttribute="trailing" secondItem="zMb-gW-tts" secondAttribute="trailing" id="jDL-SR-YNj"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="znf-kp-BSu" appends="YES" id="d9E-Ux-06f"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="l8K-jN-jeo"/>
                     <connections>
@@ -239,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpT-pZ-mpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="znf-kp-BSu">
+                    <connections>
+                        <action selector="swipe:" destination="VSY-hA-tHf" id="xUt-OX-dlU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2861.25" y="470.07042253521126"/>
         </scene>
@@ -259,16 +268,19 @@
             </objects>
             <point key="canvasLocation" x="-214" y="779"/>
         </scene>
-        <!--All List-->
+        <!--遊戲清單-->
         <scene sceneID="Cqs-SQ-0l8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q56-ve-BIu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All List" image="AllList.png" id="2nx-pW-eSr"/>
+                    <tabBarItem key="tabBarItem" title="遊戲清單" image="AllList.png" id="2nx-pW-eSr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B7l-z3-ms8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.98554438339999995" green="1" blue="0.97914803859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -279,16 +291,19 @@
             </objects>
             <point key="canvasLocation" x="900" y="471.12676056338029"/>
         </scene>
-        <!--My List-->
+        <!--我的清單-->
         <scene sceneID="sdj-iY-JjW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bNp-g6-n18" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My List" image="MyList.png" id="Bz6-RJ-9hy"/>
+                    <tabBarItem key="tabBarItem" title="我的清單" image="MyList.png" id="Bz6-RJ-9hy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7r-Hs-bzO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.98554438339999995" green="1" blue="0.97914803859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
