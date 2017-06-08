@@ -25,6 +25,22 @@
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
+    UIButton *mail = [UIButton new];
+    [mail setTitle:@"我想交換" forState:UIControlStateNormal];
+    [mail setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    mail.frame = CGRectMake((self.view.bounds.size.width-100)/2.0, self.view.bounds.size.height-100, 100, 40);
+    [mail setBackgroundColor:[UIColor colorWithRed:0.27 green:0.64 blue:1.00 alpha:0.4]];
+    mail.layer.borderWidth = 1;
+    mail.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    mail.layer.shadowOpacity = 0.5;
+    mail.layer.shadowOffset = CGSizeMake(3, 5);
+    mail.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    mail.layer.cornerRadius = 10;
+    [self.view addSubview:mail];
+    [mail addTarget:self action:@selector(sentMail) forControlEvents:UIControlEventTouchUpInside];
+
+    
     self.detailNotes = [NSMutableArray new];
     [self.detailNotes addObject:self.dnotes.changeOutGame];
     [self.detailNotes addObject:self.dnotes.changeInGame];
@@ -43,6 +59,18 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
 }
+
+-(void) sentMail {
+    
+    NSDictionary *fake = nil;
+    
+    NSString *URLEMail = [NSString stringWithFormat:@"mailto:%@?subject=我想交換",self.detailNotes[4]];
+    
+    NSString *url = [URLEMail stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet  URLQueryAllowedCharacterSet]];
+    NSURL *uurrll = [NSURL URLWithString:url];
+    [[UIApplication sharedApplication] openURL:uurrll options:fake completionHandler:nil];
+}
+
 - (IBAction)swipe:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
