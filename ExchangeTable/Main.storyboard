@@ -25,15 +25,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="YFX-AN-0PW" customClass="HistoryListCellController">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="QH6-Gd-kcD" customClass="HistoryListCellController">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YFX-AN-0PW" id="8OC-hi-XkZ">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QH6-Gd-kcD" id="R2E-k4-SzL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Bu2-QO-G2y" kind="show" identifier="modifysegue" id="C4y-3c-9lL"/>
+                                            <segue destination="Bu2-QO-G2y" kind="show" identifier="modifysegue" id="X3E-x4-9j4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -49,6 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="我的清單" id="jGo-XE-Pyo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P6t-wI-eXb">
+                            <color key="tintColor" red="0.019982024219999998" green="0.020403711929999999" blue="0.019956416960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addData:" destination="g9q-2k-DMb" id="V39-Op-Ohb"/>
                             </connections>
@@ -93,41 +94,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-uU-UZV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-uU-UZV">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3Ih-CH-bvY" customClass="CellController">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="96" id="3Ih-CH-bvY" customClass="CellController">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ih-CH-bvY" id="Ja1-i1-MM5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想取得的遊戲:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-Oz-cCu">
-                                                    <rect key="frame" x="10" y="5" width="109" height="20"/>
+                                                    <rect key="frame" x="10" y="10" width="128.5" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="03x-w5-XtM"/>
                                                         <constraint firstAttribute="height" constant="20" id="Le7-gf-UqD"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puA-Ba-cNv">
-                                                    <rect key="frame" x="10" y="27" width="300" height="6.5"/>
+                                                    <rect key="frame" x="10" y="40" width="300" height="40.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="puA-Ba-cNv" secondAttribute="trailing" constant="10" id="HcA-Yn-T3r"/>
+                                                <constraint firstItem="puA-Ba-cNv" firstAttribute="top" secondItem="Xd0-Oz-cCu" secondAttribute="bottom" constant="10" id="MI7-5Q-pNS"/>
+                                                <constraint firstItem="Xd0-Oz-cCu" firstAttribute="top" secondItem="Ja1-i1-MM5" secondAttribute="top" constant="10" id="MXj-lg-hJk"/>
                                                 <constraint firstItem="Xd0-Oz-cCu" firstAttribute="leading" secondItem="Ja1-i1-MM5" secondAttribute="leading" constant="10" id="Qyh-03-Gct"/>
-                                                <constraint firstItem="puA-Ba-cNv" firstAttribute="leading" secondItem="Ja1-i1-MM5" secondAttribute="leading" constant="10" id="c1P-ZJ-iHd"/>
-                                                <constraint firstItem="Xd0-Oz-cCu" firstAttribute="top" secondItem="Ja1-i1-MM5" secondAttribute="top" constant="5" id="mXt-I7-iJ9"/>
-                                                <constraint firstItem="puA-Ba-cNv" firstAttribute="top" secondItem="Xd0-Oz-cCu" secondAttribute="bottom" constant="2" id="uAV-wb-76K"/>
-                                                <constraint firstAttribute="bottom" secondItem="puA-Ba-cNv" secondAttribute="bottom" constant="10" id="z67-jc-zRa"/>
+                                                <constraint firstItem="puA-Ba-cNv" firstAttribute="leading" secondItem="Ja1-i1-MM5" secondAttribute="leading" constant="10" id="SeR-GZ-Zb1"/>
+                                                <constraint firstAttribute="trailing" secondItem="puA-Ba-cNv" secondAttribute="trailing" constant="10" id="wfZ-4Z-TXy"/>
+                                                <constraint firstAttribute="bottom" secondItem="puA-Ba-cNv" secondAttribute="bottom" constant="15" id="zym-hy-pZ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -277,9 +278,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B7l-z3-ms8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.99215686274509807" green="0.96470588235294119" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.98554438339999995" green="1" blue="0.97914803859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.065422195899668259" green="0.066802823604060868" blue="0.065338356401437273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -300,9 +301,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7r-Hs-bzO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.99215686274509807" green="0.96470588235294119" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.98554438339999995" green="1" blue="0.97914803859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0057479875293267833" green="0.0058692893401015578" blue="0.0057406213994733038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood.png"]];
+    
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -56,7 +58,7 @@
     [self.tableView setTableFooterView:[UIView new]];
     
     self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期:"];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
 }
 
@@ -92,6 +94,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
+    
+//    cell.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.3];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
     

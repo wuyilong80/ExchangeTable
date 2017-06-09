@@ -10,6 +10,8 @@
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
 		1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1315DBFA1ECD4E53006F004A /* Main.storyboard */; };
+		1341025D1EEA88BB007C82A1 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025C1EEA88BB007C82A1 /* wood.png */; };
+		1341025F1EEA9427007C82A1 /* wood2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025E1EEA9427007C82A1 /* wood2.png */; };
 		137BDBD31EE647150069BB7A /* AllList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD21EE647150069BB7A /* AllList.png */; };
 		137BDBD51EE649400069BB7A /* MyList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD41EE649400069BB7A /* MyList.png */; };
 		137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD61EE6563F0069BB7A /* images.jpeg */; };
@@ -37,6 +39,8 @@
 		1301A27E1EC5959C0031A251 /* UploadTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTable.h; sourceTree = "<group>"; };
 		1301A27F1EC5959C0031A251 /* UploadTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTable.m; sourceTree = "<group>"; };
 		1315DBFA1ECD4E53006F004A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1341025C1EEA88BB007C82A1 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
+		1341025E1EEA9427007C82A1 /* wood2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood2.png; sourceTree = "<group>"; };
 		137BDBD21EE647150069BB7A /* AllList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllList.png; sourceTree = "<group>"; };
 		137BDBD41EE649400069BB7A /* MyList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyList.png; sourceTree = "<group>"; };
 		137BDBD61EE6563F0069BB7A /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				137BDBD21EE647150069BB7A /* AllList.png */,
 				137BDBD61EE6563F0069BB7A /* images.jpeg */,
+				1341025C1EEA88BB007C82A1 /* wood.png */,
+				1341025E1EEA9427007C82A1 /* wood2.png */,
 				137BDBD41EE649400069BB7A /* MyList.png */,
 				13EA7B1B1EE01C8A00781CDF /* framework */,
 				13CC8CC21EB213B200F7B74A /* AppDelegate.h */,
@@ -222,6 +228,8 @@
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
 				137BDBD51EE649400069BB7A /* MyList.png in Resources */,
 				137BDBD31EE647150069BB7A /* AllList.png in Resources */,
+				1341025F1EEA9427007C82A1 /* wood2.png in Resources */,
+				1341025D1EEA88BB007C82A1 /* wood.png in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,
 				137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */,
 			);

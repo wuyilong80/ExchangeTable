@@ -21,4 +21,18 @@
     // Configure the view for the selected state
 }
 
+-(void)setFrame:(CGRect)frame
+{
+    self.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.3];
+    //    self.layer.cornerRadius = 20;
+    //    self.layer.borderWidth = 1;
+    //    self.layer.borderColor = [UIColor blackColor].CGColor;
+    frame.origin.x = 8;
+    frame.size.width -= 15;
+    frame.size.height -= frame.origin.x;
+    //        self.layer.masksToBounds = YES;
+    //        self.layer.cornerRadius = 45.0;
+    [super setFrame:frame];
+}
+
 @end

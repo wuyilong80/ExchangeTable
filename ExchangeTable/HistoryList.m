@@ -68,10 +68,15 @@
     self.tableView.dataSource = self;
 //    self.ddddd = NO;
     
+    self.tableView.estimatedRowHeight = 50;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood2.png"]];
+    
     UIBarButtonItem *delete = [[UIBarButtonItem alloc]initWithTitle:@"刪除" style:UIBarButtonItemStylePlain target:self action:@selector(deletedelete)];
     
     self.navigationItem.leftBarButtonItem = delete;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
 -(void) deletedelete {
