@@ -15,6 +15,7 @@
 @import FBSDKCoreKit;
 #import "AppDelegate.h"
 #import "DeleteModel.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource,UploadTableDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addNote;
@@ -40,6 +41,7 @@
     [super viewWillAppear:animated];
     
     [self.data removeAllObjects];
+    
     [self.tableView reloadData];
 
     self.addNote.enabled = NO;
@@ -55,6 +57,7 @@
             if (str.length != 0) {
                 self.addNote.enabled = YES;
                 self.emailCatch = info[@"email"];
+                [SVProgressHUD showWithStatus:@"please wait"];
                 [self didFinishSaveReLoad];
             }
         }];
@@ -250,6 +253,7 @@
                 [self.data insertObject:note atIndex:0];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
                 [self.tableView reloadData];
             });
         }else{
