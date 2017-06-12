@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -31,7 +31,7 @@
     [mail setTitle:@"我想交換" forState:UIControlStateNormal];
     [mail setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     mail.frame = CGRectMake((self.view.bounds.size.width-100)/2.0, self.view.bounds.size.height-100, 100, 40);
-    [mail setBackgroundColor:[UIColor colorWithRed:0.27 green:0.64 blue:1.00 alpha:0.4]];
+    [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.6]];
     mail.layer.borderWidth = 1;
     mail.layer.borderColor = [UIColor lightGrayColor].CGColor;
     mail.layer.shadowOpacity = 0.5;
@@ -95,18 +95,15 @@
     
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
-//    cell.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.3];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
-    
+    cell.detailTitle.textColor = [UIColor whiteColor];
     
     cell.detailContext.text = self.detailNotes[indexPath.row];
+    cell.detailContext.textColor = [UIColor whiteColor];
     
     return  cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 /*

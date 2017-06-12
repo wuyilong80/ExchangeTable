@@ -190,7 +190,8 @@
     NSInteger index = [self.data indexOfObject:cancelNote];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.data removeObject:cancelNote];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView reloadData];
 }
 
 -(void)didFinishDidUpdate:(Note *)updateNote{

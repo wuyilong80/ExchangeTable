@@ -23,7 +23,7 @@
 
 -(void)setFrame:(CGRect)frame
 {
-    self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2];
+    self.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
     self.layer.cornerRadius = 10;
 //    self.layer.borderWidth = 1;
 //    self.layer.borderColor = [UIColor lightGrayColor].CGColor;

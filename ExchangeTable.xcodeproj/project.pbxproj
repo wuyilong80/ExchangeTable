@@ -16,6 +16,7 @@
 		137BDBD51EE649400069BB7A /* MyList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD41EE649400069BB7A /* MyList.png */; };
 		137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD61EE6563F0069BB7A /* images.jpeg */; };
 		137BDBDC1EE6AA680069BB7A /* DeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BDBDB1EE6AA680069BB7A /* DeleteModel.m */; };
+		137DAEC51EEE70720074FB9F /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 137DAEC41EEE70720074FB9F /* blackboard.png */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
@@ -48,6 +49,7 @@
 		137BDBD61EE6563F0069BB7A /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		137BDBDA1EE6AA680069BB7A /* DeleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteModel.h; sourceTree = "<group>"; };
 		137BDBDB1EE6AA680069BB7A /* DeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteModel.m; sourceTree = "<group>"; };
+		137DAEC41EEE70720074FB9F /* blackboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackboard.png; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				137BDBD21EE647150069BB7A /* AllList.png */,
 				137BDBD61EE6563F0069BB7A /* images.jpeg */,
 				1341025C1EEA88BB007C82A1 /* wood.png */,
+				137DAEC41EEE70720074FB9F /* blackboard.png */,
 				1341025E1EEA9427007C82A1 /* wood2.png */,
 				137BDBD41EE649400069BB7A /* MyList.png */,
 				13EA7B1B1EE01C8A00781CDF /* framework */,
@@ -259,6 +262,7 @@
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
 				137BDBD51EE649400069BB7A /* MyList.png in Resources */,
 				137BDBD31EE647150069BB7A /* AllList.png in Resources */,
+				137DAEC51EEE70720074FB9F /* blackboard.png in Resources */,
 				1341025F1EEA9427007C82A1 /* wood2.png in Resources */,
 				1341025D1EEA88BB007C82A1 /* wood.png in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,

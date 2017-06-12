@@ -41,9 +41,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
-    self.tableView.backgroundColor = [UIColor whiteColor];
+//    self.tableView.backgroundColor = [UIColor whiteColor];
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.frame = CGRectMake(self.view.bounds.size.width-100, 25, 90, loginButton.bounds.size.height);
@@ -86,6 +86,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 }
 
 #pragma mark UITableViewDataSource
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     for (int x = 0; x < self.mainNotes.count; x++) {
@@ -111,13 +112,36 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
     for (int x = 0; x < self.mainNotes.count; x++) {
         if (indexPath.section == x) {
             Note *note=self.mainNotes[x];
+            
             cell.mainContextLabel.text=note.changeOutGame;
+            cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
+            cell.mainContextLabel.textColor = [UIColor lightTextColor];
+            
+            cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
+            cell.mainTitleLabel.textColor = [UIColor whiteColor];
         }
     }
     return  cell;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *sectionView = [UIView new];
+    
+    [tableView addSubview:sectionView];
+    
+    return sectionView;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    
+    return @"";
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -168,6 +192,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
         }
     }];
 }
+
 
 /*
  #pragma mark - Navigation
