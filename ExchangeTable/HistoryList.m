@@ -68,8 +68,8 @@
     self.tableView.dataSource = self;
 //    self.ddddd = NO;
     
-    self.tableView.estimatedRowHeight = 50;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 50;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood2.png"]];
     
@@ -154,7 +154,7 @@
 
 -(void)didFinishSave:(Note *)unote{
     
-    NSString *internet = [NSString stringWithFormat:@"http://%@/note_add.php",INTERNET];
+    NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/note_add.php"];
     NSURL *url = [NSURL URLWithString:internet];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -192,7 +192,7 @@
 
 -(void)didFinishDidUpdate:(Note *)updateNote{
     
-    NSString *internet = [NSString stringWithFormat:@"http://%@/update_note.php",INTERNET];
+    NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/update_note.php"];
     NSURL *url = [NSURL URLWithString:internet];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

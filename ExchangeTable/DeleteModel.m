@@ -12,7 +12,7 @@
 
 +(void)userid:(NSString*)userid gameid:(NSString*)gameid the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 {
-    NSString *internet = [NSString stringWithFormat:@"http://%@/delete_data.php",INTERNET];
+    NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/delete_data.php"];
     NSString *us = internet;
     NSURL *url = [NSURL URLWithString:us];
     NSMutableURLRequest *mr = [NSMutableURLRequest requestWithURL:url];

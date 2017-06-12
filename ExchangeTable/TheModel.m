@@ -13,7 +13,7 @@
 +(void)the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 {
     
-    NSString *internet = [NSString stringWithFormat:@"http://%@/fetch_order.php",INTERNET];
+    NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/fetch_order.php"];
     NSString *us = internet;
     NSURL *url = [NSURL URLWithString:us];
     NSMutableURLRequest *mr = [NSMutableURLRequest requestWithURL:url];
