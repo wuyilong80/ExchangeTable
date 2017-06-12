@@ -125,7 +125,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     if ([segue.identifier isEqualToString:@"messageSegue"]) {
         MessageViewController *message = segue.destinationViewController;
         NSIndexPath *i = [self.tableView indexPathForSelectedRow];
-        Note *note=self.mainNotes[i.row];
+        Note *note=self.mainNotes[i.section];
         message.dnotes = note;
     }
 }
