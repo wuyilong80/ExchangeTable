@@ -14,6 +14,7 @@
 #import "HistoryList.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @import FBSDKCoreKit;
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface TableOne ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UISearchControllerDelegate,FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,6 +33,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [SVProgressHUD show];
     [self didFinishSaveReLoad];
 }
 
@@ -61,6 +63,10 @@
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
+- (IBAction)reFreshBtn:(id)sender {
+    
+    [self didFinishSaveReLoad];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,15 +86,35 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    for (int x = 0; x < self.mainNotes.count; x++) {
+        if (section == x) {
+            return 1;
+        }
+    }
+//    return self.mainNotes.count;
+    return 0;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return self.mainNotes.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 10;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Note *note=self.mainNotes[indexPath.row];
     
-    cell.mainContextLabel.text=note.changeOutGame;
+    for (int x = 0; x < self.mainNotes.count; x++) {
+        if (indexPath.section == x) {
+            Note *note=self.mainNotes[x];
+            cell.mainContextLabel.text=note.changeOutGame;
+        }
+    }
     return  cell;
 }
 
@@ -132,6 +158,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 [self.mainNotes insertObject:note atIndex:0];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
                 [self.tableView reloadData];
             });
         }else{

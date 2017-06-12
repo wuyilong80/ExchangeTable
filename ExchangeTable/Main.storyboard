@@ -94,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-uU-UZV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-uU-UZV">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -152,7 +152,13 @@
                             <constraint firstItem="3NO-uU-UZV" firstAttribute="leading" secondItem="TUJ-gy-HSI" secondAttribute="leading" id="e5R-zJ-kHa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="遊戲清單" id="BYI-Rt-hfS"/>
+                    <navigationItem key="navigationItem" title="遊戲清單" id="wOA-hX-xKO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="2eU-3x-W4L">
+                            <connections>
+                                <action selector="reFreshBtn:" destination="MLF-cm-JeI" id="LzL-Q3-L4P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="lwn-Z3-AIg" id="dqc-fF-zH3"/>
                         <outlet property="tableView" destination="3NO-uU-UZV" id="RQ5-Np-f5I"/>
