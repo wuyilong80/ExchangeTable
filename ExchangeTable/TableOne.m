@@ -33,7 +33,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [SVProgressHUD show];
+    [SVProgressHUD showWithStatus:@"please wait"];
+//    [SVProgressHUD show];
     [self didFinishSaveReLoad];
 }
 
@@ -65,6 +66,7 @@
 }
 - (IBAction)reFreshBtn:(id)sender {
     
+    [SVProgressHUD showWithStatus:@"please wait"];
     [self didFinishSaveReLoad];
 }
 
