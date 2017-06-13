@@ -258,6 +258,24 @@
             </objects>
             <point key="canvasLocation" x="2861.25" y="470.07042253521126"/>
         </scene>
+        <!--Conversation View Controller-->
+        <scene sceneID="Oyz-WF-ziN">
+            <objects>
+                <viewController storyboardIdentifier="conversation" id="WFT-qa-nkY" customClass="ConversationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p3u-92-uhb"/>
+                        <viewControllerLayoutGuide type="bottom" id="iZk-mn-H34"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="otH-01-88A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oo-hr-KLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3898" y="477"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aPG-o5-mD7">
             <objects>

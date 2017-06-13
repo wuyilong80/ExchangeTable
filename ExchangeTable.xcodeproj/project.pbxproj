@@ -10,6 +10,7 @@
 		1300E3B11EBB589B00714C64 /* TheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300E3B01EBB589B00714C64 /* TheModel.m */; };
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
 		1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1315DBFA1ECD4E53006F004A /* Main.storyboard */; };
+		13246F841EEF9396008115D9 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13246F831EEF9396008115D9 /* ConversationViewController.m */; };
 		1341025D1EEA88BB007C82A1 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025C1EEA88BB007C82A1 /* wood.png */; };
 		1341025F1EEA9427007C82A1 /* wood2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025E1EEA9427007C82A1 /* wood2.png */; };
 		137BDBD31EE647150069BB7A /* AllList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD21EE647150069BB7A /* AllList.png */; };
@@ -42,6 +43,8 @@
 		1301A27E1EC5959C0031A251 /* UploadTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTable.h; sourceTree = "<group>"; };
 		1301A27F1EC5959C0031A251 /* UploadTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTable.m; sourceTree = "<group>"; };
 		1315DBFA1ECD4E53006F004A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		13246F821EEF9396008115D9 /* ConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
+		13246F831EEF9396008115D9 /* ConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
 		1341025C1EEA88BB007C82A1 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
 		1341025E1EEA9427007C82A1 /* wood2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood2.png; sourceTree = "<group>"; };
 		137BDBD21EE647150069BB7A /* AllList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllList.png; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */,
 				137BDBDA1EE6AA680069BB7A /* DeleteModel.h */,
 				137BDBDB1EE6AA680069BB7A /* DeleteModel.m */,
+				13246F821EEF9396008115D9 /* ConversationViewController.h */,
+				13246F831EEF9396008115D9 /* ConversationViewController.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,
 				1300E3B11EBB589B00714C64 /* TheModel.m in Sources */,
+				13246F841EEF9396008115D9 /* ConversationViewController.m in Sources */,
 				13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */,
 				13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */,
 				13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */,

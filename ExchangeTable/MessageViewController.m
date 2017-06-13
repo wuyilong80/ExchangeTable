@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 #import "Note.h"
 #import "MessageCellController.h"
+#import "ConversationViewController.h"
 
 @interface MessageViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,20 +29,32 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     UIButton *mail = [UIButton new];
-    [mail setTitle:@"我想交換" forState:UIControlStateNormal];
+    [mail setTitle:@"信箱交換" forState:UIControlStateNormal];
     [mail setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    mail.frame = CGRectMake((self.view.bounds.size.width-100)/2.0, self.view.bounds.size.height-100, 100, 40);
-    [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.6]];
-    mail.layer.borderWidth = 1;
-    mail.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    mail.frame = CGRectMake((self.view.bounds.size.width-200)/2, self.view.bounds.size.height-100, 100, 40);
+    [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.3]];
+    mail.layer.borderWidth = 1.5;
+    mail.layer.borderColor = [UIColor grayColor].CGColor;
     mail.layer.shadowOpacity = 0.5;
     mail.layer.shadowOffset = CGSizeMake(3, 5);
     mail.layer.shadowColor = [UIColor blackColor].CGColor;
-    
     mail.layer.cornerRadius = 10;
     [self.view addSubview:mail];
     [mail addTarget:self action:@selector(sentMail) forControlEvents:UIControlEventTouchUpInside];
-
+    
+    UIButton *leaveMessage = [UIButton new];
+    [leaveMessage setTitle:@"留言交換" forState:UIControlStateNormal];
+    [leaveMessage setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leaveMessage setBackgroundColor:[UIColor colorWithRed:0.52 green:0.76 blue:1.00 alpha:0.3]];
+    leaveMessage.frame = CGRectMake(((self.view.bounds.size.width-200)/2.0)+100, self.view.bounds.size.height-100, 100, 40);
+    leaveMessage.layer.borderWidth = 1.5;
+    leaveMessage.layer.borderColor = [UIColor grayColor].CGColor;
+    leaveMessage.layer.shadowOpacity = 0.5;
+    leaveMessage.layer.shadowOffset = CGSizeMake(3, 5);
+    leaveMessage.layer.shadowColor = [UIColor blackColor].CGColor;
+    leaveMessage.layer.cornerRadius = 10;
+    [self.view addSubview:leaveMessage];
+    [leaveMessage addTarget:self action:@selector(leaveMessagePressed) forControlEvents:UIControlEventTouchUpInside];
     
     self.detailNotes = [NSMutableArray new];
     [self.detailNotes addObject:self.dnotes.changeOutGame];
@@ -60,6 +73,11 @@
     self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期:"];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
+}
+-(void) leaveMessagePressed {
+    
+    ConversationViewController *conversation = [self.storyboard instantiateViewControllerWithIdentifier:@"conversation"];
+    [self presentViewController:conversation animated:YES completion:nil];
 }
 
 -(void) sentMail {
