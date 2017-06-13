@@ -11,6 +11,7 @@
 		1301A2801EC5959C0031A251 /* UploadTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301A27F1EC5959C0031A251 /* UploadTable.m */; };
 		1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1315DBFA1ECD4E53006F004A /* Main.storyboard */; };
 		13246F841EEF9396008115D9 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13246F831EEF9396008115D9 /* ConversationViewController.m */; };
+		13246F871EEFD160008115D9 /* ConverVCCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13246F861EEFD160008115D9 /* ConverVCCellController.m */; };
 		1341025D1EEA88BB007C82A1 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025C1EEA88BB007C82A1 /* wood.png */; };
 		1341025F1EEA9427007C82A1 /* wood2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1341025E1EEA9427007C82A1 /* wood2.png */; };
 		137BDBD31EE647150069BB7A /* AllList.png in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD21EE647150069BB7A /* AllList.png */; };
@@ -45,6 +46,8 @@
 		1315DBFA1ECD4E53006F004A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		13246F821EEF9396008115D9 /* ConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
 		13246F831EEF9396008115D9 /* ConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
+		13246F851EEFD160008115D9 /* ConverVCCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverVCCellController.h; sourceTree = "<group>"; };
+		13246F861EEFD160008115D9 /* ConverVCCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverVCCellController.m; sourceTree = "<group>"; };
 		1341025C1EEA88BB007C82A1 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
 		1341025E1EEA9427007C82A1 /* wood2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood2.png; sourceTree = "<group>"; };
 		137BDBD21EE647150069BB7A /* AllList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllList.png; sourceTree = "<group>"; };
@@ -144,6 +147,10 @@
 				EC6607181EBA1B800098D625 /* MessageViewController.m */,
 				13B4C4741EC496D200F4F254 /* MessageCellController.h */,
 				13B4C4751EC496D200F4F254 /* MessageCellController.m */,
+				13246F821EEF9396008115D9 /* ConversationViewController.h */,
+				13246F831EEF9396008115D9 /* ConversationViewController.m */,
+				13246F851EEFD160008115D9 /* ConverVCCellController.h */,
+				13246F861EEFD160008115D9 /* ConverVCCellController.m */,
 				EC99C9421EB5DA68007333F6 /* Note.h */,
 				EC99C9431EB5DA68007333F6 /* Note.m */,
 				13E4F9A71ED45CF0007F2125 /* HistoryList.h */,
@@ -158,8 +165,6 @@
 				13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */,
 				137BDBDA1EE6AA680069BB7A /* DeleteModel.h */,
 				137BDBDB1EE6AA680069BB7A /* DeleteModel.m */,
-				13246F821EEF9396008115D9 /* ConversationViewController.h */,
-				13246F831EEF9396008115D9 /* ConversationViewController.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				EC99C9441EB5DA68007333F6 /* Note.m in Sources */,
 				13CC8CC11EB213B200F7B74A /* main.m in Sources */,
 				13E813B51EE15EBF0045DAF5 /* CatchTheModel.m in Sources */,
+				13246F871EEFD160008115D9 /* ConverVCCellController.m in Sources */,
 				13CC8CD81EB2174E00F7B74A /* TableOne.m in Sources */,
 				EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */,
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,

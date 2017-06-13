@@ -76,8 +76,9 @@
 }
 -(void) leaveMessagePressed {
     
-    ConversationViewController *conversation = [self.storyboard instantiateViewControllerWithIdentifier:@"conversation"];
-    [self presentViewController:conversation animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"conversationsegue" sender:nil];
+//    ConversationViewController *conversation = [self.storyboard instantiateViewControllerWithIdentifier:@"conversation"];
+//    [self presentViewController:conversation animated:YES completion:nil];
 }
 
 -(void) sentMail {
@@ -124,6 +125,12 @@
     return  cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"conversationsegue"]) {
+        ConversationViewController *conversationVC = segue.destinationViewController;
+    }
+}
 /*
 #pragma mark - Navigation
 
