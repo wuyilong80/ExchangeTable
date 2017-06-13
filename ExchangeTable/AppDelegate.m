@@ -20,11 +20,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-
+    
+    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
+    [fbDict setValue:@"email" forKey:@"fields"];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
+        
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            NSDictionary *info = result;
+            if (result != nil) {
+                self.emailCatch = info[@"email"];
+                
+            }else{
+                self.emailCatch=@"";
+            }
+        }];
+    }
     return YES;
 }
 

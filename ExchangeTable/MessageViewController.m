@@ -10,6 +10,7 @@
 #import "Note.h"
 #import "MessageCellController.h"
 #import "ConversationViewController.h"
+#import "AppDelegate.h"
 
 @interface MessageViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -129,6 +130,7 @@
     
     if ([segue.identifier isEqualToString:@"conversationsegue"]) {
         ConversationViewController *conversationVC = segue.destinationViewController;
+        conversationVC.articleID = self.dnotes.gameid;        
     }
 }
 /*

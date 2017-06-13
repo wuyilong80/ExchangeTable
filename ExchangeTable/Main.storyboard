@@ -287,15 +287,15 @@
                                     <action selector="messageSendBtn:" destination="WFT-qa-nkY" eventType="touchUpInside" id="sBp-4L-Dcq"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-FE-laN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-FE-laN">
                                 <rect key="frame" x="0.0" y="64" width="320" height="417"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="convercell" rowHeight="67" id="DKd-ez-r0c" customClass="ConverVCCellController">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="convercell" rowHeight="116" id="DKd-ez-r0c" customClass="ConverVCCellController">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DKd-ez-r0c" id="0Ue-pp-o7K">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlI-vr-og9">
@@ -310,17 +310,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-1D-vNE">
+                                                    <rect key="frame" x="10" y="82" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BlI-vr-og9" firstAttribute="top" secondItem="0Ue-pp-o7K" secondAttribute="top" constant="5" id="69b-5o-n5a"/>
                                                 <constraint firstItem="ipb-pt-Nl9" firstAttribute="top" secondItem="BlI-vr-og9" secondAttribute="bottom" constant="20" id="9HB-ed-cfo"/>
                                                 <constraint firstItem="BlI-vr-og9" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="G6Y-q8-vW5"/>
+                                                <constraint firstItem="0JV-1D-vNE" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="MKU-tt-dXb"/>
+                                                <constraint firstItem="0JV-1D-vNE" firstAttribute="top" secondItem="ipb-pt-Nl9" secondAttribute="bottom" constant="15" id="UrG-wn-isY"/>
                                                 <constraint firstItem="ipb-pt-Nl9" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="s0p-H8-yAR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contentLabel" destination="ipb-pt-Nl9" id="53p-1D-Kla"/>
                                             <outlet property="nameLabel" destination="BlI-vr-og9" id="gQH-Bt-g17"/>
+                                            <outlet property="timeLabel" destination="0JV-1D-vNE" id="5WM-v5-bQU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -346,6 +355,7 @@
                     <navigationItem key="navigationItem" title="訊息" id="prD-Dg-fVn"/>
                     <connections>
                         <outlet property="conversationTextField" destination="eBh-tT-dlS" id="VG4-E2-sEF"/>
+                        <outlet property="messageBtn" destination="DO7-lw-XD8" id="rtC-nw-JBb"/>
                         <outlet property="tableView" destination="Kyq-FE-laN" id="Eov-4B-YPk"/>
                     </connections>
                 </viewController>

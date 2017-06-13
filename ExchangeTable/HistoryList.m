@@ -16,6 +16,7 @@
 #import "AppDelegate.h"
 #import "DeleteModel.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "AppDelegate.h"
 
 @interface HistoryList ()<UITableViewDelegate,UITableViewDataSource,UploadTableDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addNote;
@@ -45,22 +46,11 @@
     [self.tableView reloadData];
 
     self.addNote.enabled = NO;
-    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
-    [fbDict setValue:@"email" forKey:@"fields"];
-    if ([FBSDKAccessToken currentAccessToken]) {
-        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
-        
-        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-            NSDictionary *info = result;
-            NSLog(@"email = %@",info[@"email"]);
-            NSString *str = info[@"email"];
-            if (str.length != 0) {
-                self.addNote.enabled = YES;
-                self.emailCatch = info[@"email"];
-                [SVProgressHUD showWithStatus:@"please wait"];
-                [self didFinishSaveReLoad];
-            }
-        }];
+    AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    if (fbLogIn.emailCatch.length != 0) {
+        [SVProgressHUD showWithStatus:@"please wait"];
+        self.addNote.enabled = YES;
+        [self didFinishSaveReLoad];
     }
 }
 

@@ -15,10 +15,12 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @import FBSDKCoreKit;
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "AppDelegate.h"
 
 @interface TableOne ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UISearchControllerDelegate,FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *mainNotes;
+@property (nonatomic) NSString *emailCatch;
 @end
 
 @implementation TableOne
@@ -33,8 +35,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     [SVProgressHUD showWithStatus:@"please wait"];
-//    [SVProgressHUD show];
     [self didFinishSaveReLoad];
 }
 
@@ -77,12 +79,33 @@
 - (void)loginButton:(FBSDKLoginButton *)loginButton
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
               error:(NSError *)error{
+    
+    NSMutableDictionary *fbDict = [NSMutableDictionary dictionary];
+    [fbDict setValue:@"email" forKey:@"fields"];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:fbDict];
+        
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            NSDictionary *info = result;
+            NSLog(@"email = %@",info[@"email"]);
+            NSString *str = info[@"email"];
+            if (str.length != 0) {
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"FBisLogIn" object:self userInfo:nil];
+                AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                fbLogIn.emailCatch = info[@"email"];
+            }
+        }];
+    }
+
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
     
     [[[FBSDKLoginManager alloc]init]logOut];
-    
+    AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    fbLogIn.emailCatch = @"";
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"FBisLogOut" object:self userInfo:nil];
+
 }
 
 #pragma mark UITableViewDataSource
@@ -151,6 +174,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
         NSIndexPath *i = [self.tableView indexPathForSelectedRow];
         Note *note=self.mainNotes[i.section];
         message.dnotes = note;
+        message.emailcatch = self.emailCatch;
     }
 }
 

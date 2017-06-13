@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ConversationViewController : UIViewController
-
+@property (nonatomic) NSString *articleID;
+@property (nonatomic) NSString *messageUserID;
 @end
