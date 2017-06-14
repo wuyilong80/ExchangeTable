@@ -79,7 +79,7 @@
 
 - (void) messageDownload {
     
-    [MessageAddModel the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [MessageAddModel gameid:self.articleID the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"%@",error);
         NSDictionary *pd;
@@ -110,8 +110,12 @@
                     self.messageBtn.enabled = YES;
                 }
                 [self.tableView reloadData];
+                if(self.messageData.count>0)
+                {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageData.count-1 inSection:0];
                 [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+                    
+                }
             });
         }else{
             NSLog(@"mapd:mysqli_errno %@",mysqli_errno);

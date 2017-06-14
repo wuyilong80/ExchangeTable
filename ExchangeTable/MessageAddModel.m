@@ -11,7 +11,7 @@
 
 @implementation MessageAddModel
 
-+(void)the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
++(void)gameid:(NSString*)gameid the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 {
     
     NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/message_order.php"];
@@ -21,7 +21,8 @@
     
     mr.HTTPMethod = @"post";
     NSData *data_ps;
-    NSString *ps = @"kw=GameName";
+    NSString *ps = [NSString stringWithFormat:@"kw=%@",gameid];
+;
     
     data_ps = [ps dataUsingEncoding:NSUTF8StringEncoding];
     mr.HTTPBody = data_ps;

@@ -10,6 +10,6 @@
 
 @interface MessageAddModel : NSObject
 
-+(void)the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
++(void)gameid:(NSString*)gameid the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 
 @end
