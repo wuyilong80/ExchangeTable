@@ -272,23 +272,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-tT-dlS">
-                                <rect key="frame" x="10" y="484" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="7EC-9s-3Dy"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="484" width="255" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DO7-lw-XD8">
-                                <rect key="frame" x="268" y="484" width="42" height="30"/>
+                                <rect key="frame" x="270" y="484" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="9zh-LI-FX1"/>
+                                </constraints>
                                 <state key="normal" title="傳送"/>
                                 <connections>
                                     <action selector="messageSendBtn:" destination="WFT-qa-nkY" eventType="touchUpInside" id="sBp-4L-Dcq"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-FE-laN">
-                                <rect key="frame" x="0.0" y="64" width="320" height="417"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="415"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="convercell" rowHeight="116" id="DKd-ez-r0c" customClass="ConverVCCellController">
@@ -341,15 +341,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kyq-FE-laN" firstAttribute="leading" secondItem="otH-01-88A" secondAttribute="leading" id="8O1-od-c0n"/>
-                            <constraint firstItem="iZk-mn-H34" firstAttribute="top" secondItem="eBh-tT-dlS" secondAttribute="bottom" constant="5" id="8Vj-ra-SrC"/>
-                            <constraint firstItem="DO7-lw-XD8" firstAttribute="leading" secondItem="eBh-tT-dlS" secondAttribute="trailing" constant="8" id="9fZ-1v-xbT"/>
-                            <constraint firstItem="Kyq-FE-laN" firstAttribute="top" secondItem="p3u-92-uhb" secondAttribute="bottom" id="A4u-3u-aMw"/>
-                            <constraint firstItem="eBh-tT-dlS" firstAttribute="leading" secondItem="otH-01-88A" secondAttribute="leading" constant="10" id="Bgb-zp-KVC"/>
-                            <constraint firstItem="iZk-mn-H34" firstAttribute="top" secondItem="DO7-lw-XD8" secondAttribute="bottom" constant="5" id="K1r-ca-6ps"/>
-                            <constraint firstItem="eBh-tT-dlS" firstAttribute="top" secondItem="Kyq-FE-laN" secondAttribute="bottom" constant="3" id="a29-Z9-6P3"/>
-                            <constraint firstAttribute="trailing" secondItem="DO7-lw-XD8" secondAttribute="trailing" constant="10" id="has-49-VUO"/>
-                            <constraint firstAttribute="trailing" secondItem="Kyq-FE-laN" secondAttribute="trailing" id="zp2-V7-UwY"/>
+                            <constraint firstItem="Kyq-FE-laN" firstAttribute="leading" secondItem="otH-01-88A" secondAttribute="leading" id="8XX-EH-4Yc"/>
+                            <constraint firstItem="iZk-mn-H34" firstAttribute="top" secondItem="DO7-lw-XD8" secondAttribute="bottom" constant="5" id="OzW-lC-iIk"/>
+                            <constraint firstAttribute="trailing" secondItem="DO7-lw-XD8" secondAttribute="trailing" constant="10" id="XJl-xi-S4j"/>
+                            <constraint firstItem="eBh-tT-dlS" firstAttribute="leading" secondItem="otH-01-88A" secondAttribute="leading" constant="10" id="aHj-cD-jkl"/>
+                            <constraint firstItem="DO7-lw-XD8" firstAttribute="leading" secondItem="eBh-tT-dlS" secondAttribute="trailing" constant="5" id="gXc-48-YzA"/>
+                            <constraint firstItem="iZk-mn-H34" firstAttribute="top" secondItem="eBh-tT-dlS" secondAttribute="bottom" constant="5" id="gaH-2W-IjQ"/>
+                            <constraint firstItem="Kyq-FE-laN" firstAttribute="top" secondItem="p3u-92-uhb" secondAttribute="bottom" id="o7B-5F-gR1"/>
+                            <constraint firstItem="DO7-lw-XD8" firstAttribute="top" secondItem="Kyq-FE-laN" secondAttribute="bottom" constant="5" id="vmi-sJ-1WM"/>
+                            <constraint firstAttribute="trailing" secondItem="Kyq-FE-laN" secondAttribute="trailing" id="zRR-Xo-KSG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="訊息" id="prD-Dg-fVn"/>
