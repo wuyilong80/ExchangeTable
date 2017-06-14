@@ -8,17 +8,28 @@
 
 #import "ConversationViewController.h"
 #import "ConverVCCellController.h"
-#import "Note.h"
+#import "MessageNote.h"
 #import "AppDelegate.h"
+#import "MessageAddModel.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface ConversationViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *conversationTextField;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
-
+@property (nonatomic) NSMutableArray *messageData;
+@property (nonatomic) CGFloat originHeight;
 @end
 
 @implementation ConversationViewController
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.messageData = [NSMutableArray new];
+    }
+    return self;
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -28,16 +39,24 @@
     if (fbLogIn.emailCatch.length != 0) {
         self.messageBtn.enabled = YES;
     }
+    
+    [self messageDownload];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.conversationTextField.delegate = self;
     
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(btnOpen) name:@"FBisLogIn" object:nil];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(btnClose) name:@"FBisLogOut" object:nil];
+    
+    [SVProgressHUD showWithStatus:@"please wait"];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(messageDownload) name:@"newMessage" object:nil];
+    self.originHeight = self.conversationTextField.frame.origin.y;
 }
 
 -(void) btnOpen {
@@ -57,8 +76,55 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)messageSendBtn:(id)sender {
+
+- (void) messageDownload {
     
+    [MessageAddModel the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSLog(@"%@",error);
+        NSDictionary *pd;
+        NSError *err_json;
+        
+        pd = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err_json];
+        NSNumber *mysqli_errno = pd[@"mysqli_errno"];
+        
+        if([mysqli_errno intValue] == 0){
+            
+            [self.messageData removeAllObjects];
+            NSArray *rows = pd[@"rows"];
+            for (int k = 0; k < rows.count; k ++) {
+                MessageNote *note = [MessageNote new];
+                NSDictionary *er=rows[k];
+                
+                note.gameID = er[@"ID"];
+                note.userID = er[@"UserID"];
+                note.content = er[@"Content"];
+                note.time = er[@"Time"];
+                
+                [self.messageData addObject:note];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+                AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                if (fbLogIn.emailCatch.length != 0) {
+                    self.messageBtn.enabled = YES;
+                }
+                [self.tableView reloadData];
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageData.count-1 inSection:0];
+                [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            });
+        }else{
+            NSLog(@"mapd:mysqli_errno %@",mysqli_errno);
+        }
+    }];
+
+}
+
+- (IBAction)messageSendBtn:(UIButton*)sender {
+    
+    
+    if (self.conversationTextField.text.length != 0 ) {
+        sender.enabled = NO;
     NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/message_add.php"];
     NSURL *url = [NSURL URLWithString:internet];
     
@@ -66,8 +132,9 @@
     [request setHTTPMethod:@"POST"];
     
     NSDateFormatter *time = [[NSDateFormatter alloc]init];
-    [time setDateStyle:NSDateFormatterShortStyle];
-    NSString *poTime = [time stringFromDate:[NSDate date]];
+    [time setDateStyle:NSDateFormatterMediumStyle];
+    [time setTimeStyle:NSDateFormatterShortStyle];
+    NSString *poTime = [NSString stringWithFormat:@"%@",[time stringFromDate:[NSDate date]]];
     
     AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
     NSString *params = [NSString stringWithFormat:@"GameID=%@&UserID=%@&Content=%@&Time=%@",self.articleID,fbLogIn.emailCatch,self.conversationTextField.text,poTime];
@@ -81,25 +148,54 @@
             NSLog(@"error %@",error);
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
+//                [[NSNotificationCenter defaultCenter]postNotificationName:@"newMessage" object:self userInfo:nil];
+                self.conversationTextField.text = @"";
+                [SVProgressHUD showWithStatus:@"please wait"];
             });
+            [self messageDownload];
         }
     }]resume];
+    }
+}
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
     
+    self.conversationTextField.translatesAutoresizingMaskIntoConstraints = NO;
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.messageBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    textField.frame = CGRectMake(0, 300, self.conversationTextField.bounds.size.width, self.conversationTextField.bounds.size.height);
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 #pragma mark UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 0;
+    return self.messageData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ConverVCCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"convercell" forIndexPath:indexPath];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    MessageNote *note=self.messageData[indexPath.row];
+    
+    cell.nameLabel.text=note.userID;
+    cell.contentLabel.text=note.content;
+    cell.timeLabel.text=note.time;
+//    cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
+//    cell.mainContextLabel.textColor = [UIColor lightTextColor];
+    
+//    cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
+//    cell.mainTitleLabel.textColor = [UIColor whiteColor];
     
     return cell;
 }

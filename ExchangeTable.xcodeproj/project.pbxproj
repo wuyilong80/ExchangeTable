@@ -19,6 +19,8 @@
 		137BDBD71EE6563F0069BB7A /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 137BDBD61EE6563F0069BB7A /* images.jpeg */; };
 		137BDBDC1EE6AA680069BB7A /* DeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BDBDB1EE6AA680069BB7A /* DeleteModel.m */; };
 		137DAEC51EEE70720074FB9F /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 137DAEC41EEE70720074FB9F /* blackboard.png */; };
+		138594501EF0E4AF002357F5 /* MessageAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1385944F1EF0E4AF002357F5 /* MessageAddModel.m */; };
+		138594531EF0E92D002357F5 /* MessageNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 138594521EF0E92D002357F5 /* MessageNote.m */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
@@ -56,6 +58,10 @@
 		137BDBDA1EE6AA680069BB7A /* DeleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteModel.h; sourceTree = "<group>"; };
 		137BDBDB1EE6AA680069BB7A /* DeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteModel.m; sourceTree = "<group>"; };
 		137DAEC41EEE70720074FB9F /* blackboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackboard.png; sourceTree = "<group>"; };
+		1385944E1EF0E4AF002357F5 /* MessageAddModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAddModel.h; sourceTree = "<group>"; };
+		1385944F1EF0E4AF002357F5 /* MessageAddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAddModel.m; sourceTree = "<group>"; };
+		138594511EF0E92D002357F5 /* MessageNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNote.h; sourceTree = "<group>"; };
+		138594521EF0E92D002357F5 /* MessageNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNote.m; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 				13246F831EEF9396008115D9 /* ConversationViewController.m */,
 				13246F851EEFD160008115D9 /* ConverVCCellController.h */,
 				13246F861EEFD160008115D9 /* ConverVCCellController.m */,
+				138594511EF0E92D002357F5 /* MessageNote.h */,
+				138594521EF0E92D002357F5 /* MessageNote.m */,
 				EC99C9421EB5DA68007333F6 /* Note.h */,
 				EC99C9431EB5DA68007333F6 /* Note.m */,
 				13E4F9A71ED45CF0007F2125 /* HistoryList.h */,
@@ -165,6 +173,8 @@
 				13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */,
 				137BDBDA1EE6AA680069BB7A /* DeleteModel.h */,
 				137BDBDB1EE6AA680069BB7A /* DeleteModel.m */,
+				1385944E1EF0E4AF002357F5 /* MessageAddModel.h */,
+				1385944F1EF0E4AF002357F5 /* MessageAddModel.m */,
 			);
 			path = ExchangeTable;
 			sourceTree = "<group>";
@@ -346,8 +356,10 @@
 				1301A2801EC5959C0031A251 /* UploadTable.m in Sources */,
 				1300E3B11EBB589B00714C64 /* TheModel.m in Sources */,
 				13246F841EEF9396008115D9 /* ConversationViewController.m in Sources */,
+				138594501EF0E4AF002357F5 /* MessageAddModel.m in Sources */,
 				13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */,
 				13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */,
+				138594531EF0E92D002357F5 /* MessageNote.m in Sources */,
 				13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */,
 				137BDBDC1EE6AA680069BB7A /* DeleteModel.m in Sources */,
 			);
