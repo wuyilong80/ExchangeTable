@@ -102,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ih-CH-bvY" id="Ja1-i1-MM5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想取得的遊戲:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-Oz-cCu">
@@ -312,8 +312,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-1D-vNE">
-                                                    <rect key="frame" x="10" y="82" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-1D-vNE">
+                                                    <rect key="frame" x="273" y="92.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -322,9 +322,9 @@
                                             <constraints>
                                                 <constraint firstItem="BlI-vr-og9" firstAttribute="top" secondItem="0Ue-pp-o7K" secondAttribute="top" constant="5" id="69b-5o-n5a"/>
                                                 <constraint firstItem="ipb-pt-Nl9" firstAttribute="top" secondItem="BlI-vr-og9" secondAttribute="bottom" constant="20" id="9HB-ed-cfo"/>
+                                                <constraint firstAttribute="trailing" secondItem="0JV-1D-vNE" secondAttribute="trailing" constant="5" id="BKr-7O-U4B"/>
                                                 <constraint firstItem="BlI-vr-og9" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="G6Y-q8-vW5"/>
-                                                <constraint firstItem="0JV-1D-vNE" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="MKU-tt-dXb"/>
-                                                <constraint firstItem="0JV-1D-vNE" firstAttribute="top" secondItem="ipb-pt-Nl9" secondAttribute="bottom" constant="15" id="UrG-wn-isY"/>
+                                                <constraint firstAttribute="bottom" secondItem="0JV-1D-vNE" secondAttribute="bottom" constant="2" id="p2a-ry-HuU"/>
                                                 <constraint firstItem="ipb-pt-Nl9" firstAttribute="leading" secondItem="0Ue-pp-o7K" secondAttribute="leading" constant="10" id="s0p-H8-yAR"/>
                                             </constraints>
                                         </tableViewCellContentView>

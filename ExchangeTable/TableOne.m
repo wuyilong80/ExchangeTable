@@ -71,13 +71,15 @@
     
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
-    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    
-    self.refreshControl.backgroundColor = [UIColor whiteColor];
-    self.refreshControl.tintColor = [UIColor redColor];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];    
+    self.refreshControl.tintColor = [UIColor whiteColor];
     
 }
 
+-(void)refresh{
+    
+    [self didFinishSaveReLoad:@""];
+}
 #pragma mark UISearchBarDelegate
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
@@ -103,10 +105,7 @@
     [searchBar resignFirstResponder];
 }
 
--(void)refresh{
-    
-    [self didFinishSaveReLoad:@""];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

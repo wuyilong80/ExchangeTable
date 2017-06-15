@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *conversationTextField;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (nonatomic) NSMutableArray *messageData;
+@property (nonatomic) UIRefreshControl *reFresh;
 @end
 
 @implementation ConversationViewController
@@ -58,6 +59,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardwillshow:) name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardwillgone:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.reFresh = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.reFresh];
+    [self.reFresh addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    self.reFresh.tintColor = [UIColor whiteColor];
+}
+
+-(void)refresh{
+    
+    [self messageDownload];
+    
 }
 
 -(void) keyboardwillshow:(NSNotification*)sender {
@@ -133,6 +145,7 @@
                 if (fbLogIn.emailCatch.length != 0) {
                     self.messageBtn.enabled = YES;
                 }
+                [self.reFresh endRefreshing];
                 [self.tableView reloadData];
                 if(self.messageData.count>0)
                 {
@@ -148,6 +161,8 @@
 
 - (IBAction)messageSendBtn:(UIButton*)sender {
     
+    [SVProgressHUD showWithStatus:@"please wait"];
+    
     [UIView animateWithDuration:0.25 animations:^{
         [self.conversationTextField resignFirstResponder];
         self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -162,7 +177,7 @@
     [request setHTTPMethod:@"POST"];
     
     NSDateFormatter *time = [[NSDateFormatter alloc]init];
-    [time setDateStyle:NSDateFormatterMediumStyle];
+    [time setDateStyle:NSDateFormatterShortStyle];
     [time setTimeStyle:NSDateFormatterShortStyle];
     NSString *poTime = [NSString stringWithFormat:@"%@",[time stringFromDate:[NSDate date]]];
     
@@ -179,7 +194,6 @@
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.conversationTextField.text = @"";
-                [SVProgressHUD showWithStatus:@"please wait"];
             });
             [self messageDownload];
         }
@@ -215,7 +229,7 @@
     
     MessageNote *note=self.messageData[indexPath.row];
     
-    cell.nameLabel.text=note.userID;
+    cell.nameLabel.text= [NSString stringWithFormat:@"%@ :",note.userID];
     cell.contentLabel.text=note.content;
     cell.timeLabel.text=note.time;
 //    cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
