@@ -10,6 +10,6 @@
 
 @interface TheModel : NSObject
 
-+(void)the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
++(void)search:(NSString*)search the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 
 @end

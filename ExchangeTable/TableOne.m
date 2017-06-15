@@ -17,10 +17,11 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "AppDelegate.h"
 
-@interface TableOne ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UISearchControllerDelegate,FBSDKLoginButtonDelegate>
+@interface TableOne ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UISearchControllerDelegate,FBSDKLoginButtonDelegate,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *mainNotes;
 @property (nonatomic) NSString *emailCatch;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic) UIRefreshControl *refreshControl;
 @end
 
@@ -38,7 +39,7 @@
     [super viewWillAppear:animated];
     
     [SVProgressHUD showWithStatus:@"please wait"];
-    [self didFinishSaveReLoad];
+    [self didFinishSaveReLoad:@""];
 }
 
 - (void)viewDidLoad {
@@ -46,7 +47,8 @@
     
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
-//    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.searchBar.delegate = self;
+    
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.frame = CGRectMake(self.view.bounds.size.width-100, 25, 90, loginButton.bounds.size.height);
@@ -75,15 +77,35 @@
     self.refreshControl.tintColor = [UIColor redColor];
     
 }
--(void)refresh{
+
+#pragma mark UISearchBarDelegate
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
-    [self didFinishSaveReLoad];
+    [self didFinishSaveReLoad:searchText];
 }
 
-- (IBAction)reFreshBtn:(id)sender {
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     
-    [SVProgressHUD showWithStatus:@"please wait"];
-    [self didFinishSaveReLoad];
+    self.searchBar.showsCancelButton = YES;
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    
+    self.searchBar.showsCancelButton = NO;
+}
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [searchBar resignFirstResponder];
+}
+
+-(void)refresh{
+    
+    [self didFinishSaveReLoad:@""];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -192,9 +214,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     }
 }
 
--(void)didFinishSaveReLoad{
+-(void)didFinishSaveReLoad:(NSString*)search{
     
-    [TheModel the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [TheModel search:search the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"%@",error);
         NSDictionary *pd;

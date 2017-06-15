@@ -95,14 +95,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-uU-UZV">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="96" id="3Ih-CH-bvY" customClass="CellController">
                                         <rect key="frame" x="0.0" y="28" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ih-CH-bvY" id="Ja1-i1-MM5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想取得的遊戲:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-Oz-cCu">
@@ -116,7 +116,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puA-Ba-cNv">
-                                                    <rect key="frame" x="10" y="40" width="300" height="40.5"/>
+                                                    <rect key="frame" x="10" y="40" width="300" height="41"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -143,23 +143,25 @@
                                     <outlet property="delegate" destination="MLF-cm-JeI" id="aLJ-4g-V4W"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mHN-NS-bfT">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3NO-uU-UZV" secondAttribute="trailing" id="8yS-c1-5vT"/>
-                            <constraint firstItem="3NO-uU-UZV" firstAttribute="top" secondItem="4cW-fY-rEe" secondAttribute="bottom" id="OlP-AY-aeq"/>
-                            <constraint firstItem="1dQ-f0-ZXS" firstAttribute="top" secondItem="3NO-uU-UZV" secondAttribute="bottom" id="Vt5-0f-mYO"/>
-                            <constraint firstItem="3NO-uU-UZV" firstAttribute="leading" secondItem="TUJ-gy-HSI" secondAttribute="leading" id="e5R-zJ-kHa"/>
+                            <constraint firstItem="mHN-NS-bfT" firstAttribute="trailing" secondItem="3NO-uU-UZV" secondAttribute="trailing" id="0A4-sJ-wxQ"/>
+                            <constraint firstItem="3NO-uU-UZV" firstAttribute="bottom" secondItem="1dQ-f0-ZXS" secondAttribute="top" id="MgQ-QE-gSF"/>
+                            <constraint firstItem="mHN-NS-bfT" firstAttribute="top" secondItem="4cW-fY-rEe" secondAttribute="bottom" id="Y9p-Pc-1wg"/>
+                            <constraint firstAttribute="trailing" secondItem="mHN-NS-bfT" secondAttribute="trailing" id="dt4-us-ONG"/>
+                            <constraint firstItem="3NO-uU-UZV" firstAttribute="top" secondItem="mHN-NS-bfT" secondAttribute="bottom" id="g8J-n7-O2P"/>
+                            <constraint firstItem="mHN-NS-bfT" firstAttribute="leading" secondItem="TUJ-gy-HSI" secondAttribute="leading" id="hkH-sG-kaN"/>
+                            <constraint firstItem="mHN-NS-bfT" firstAttribute="leading" secondItem="3NO-uU-UZV" secondAttribute="leading" id="n4N-Qa-zQK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="遊戲清單" id="wOA-hX-xKO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="2eU-3x-W4L">
-                            <connections>
-                                <action selector="reFreshBtn:" destination="MLF-cm-JeI" id="LzL-Q3-L4P"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="遊戲清單" id="wOA-hX-xKO"/>
                     <connections>
+                        <outlet property="searchBar" destination="mHN-NS-bfT" id="T3f-Vd-sDB"/>
                         <outlet property="searchDisplayController" destination="lwn-Z3-AIg" id="dqc-fF-zH3"/>
                         <outlet property="tableView" destination="3NO-uU-UZV" id="RQ5-Np-f5I"/>
                     </connections>
@@ -174,7 +176,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1897.5" y="471.12676056338029"/>
+            <point key="canvasLocation" x="1841" y="470"/>
         </scene>
         <!--詳細資訊-->
         <scene sceneID="RI9-G9-kSy">

@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 @implementation TheModel
 
-+(void)the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
++(void)search:(NSString*)search the_fetch:(void(^)(NSData *,NSURLResponse *,NSError *))block;
 {
     
     NSString *internet = [NSString stringWithFormat:@"https://wuyilong80.000webhostapp.com/fetch_order.php"];
@@ -20,7 +20,7 @@
     
     mr.HTTPMethod = @"post";
     NSData *data_ps;
-    NSString *ps = @"kw=GameName";
+    NSString *ps = [NSString stringWithFormat:@"kw=%@",search];
     
     data_ps = [ps dataUsingEncoding:NSUTF8StringEncoding];
     mr.HTTPBody = data_ps;

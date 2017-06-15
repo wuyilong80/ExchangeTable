@@ -68,7 +68,11 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         
-        self.view.frame = CGRectMake(0, -(self.view.bounds.size.height-high.size.height)/2, self.view.bounds.size.width, self.view.bounds.size.height);
+        if (self.view.bounds.size.width == 320) {
+            self.view.frame = CGRectMake(0, -(self.view.bounds.size.height-high.size.height)*0.65, self.view.bounds.size.width, self.view.bounds.size.height);
+        }else{
+            self.view.frame = CGRectMake(0, -(self.view.bounds.size.height-high.size.height)/2, self.view.bounds.size.width, self.view.bounds.size.height);
+        }
     }];
 }
 
@@ -77,9 +81,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         
         self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-        
-        [self.view layoutIfNeeded];
-    }];
+            }];
 }
 
 -(void) btnOpen {
@@ -145,6 +147,11 @@
 }
 
 - (IBAction)messageSendBtn:(UIButton*)sender {
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.conversationTextField resignFirstResponder];
+        self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    }];
     
     if (self.conversationTextField.text.length != 0 ) {
         sender.enabled = NO;

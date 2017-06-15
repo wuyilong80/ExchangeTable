@@ -48,9 +48,12 @@
     self.addNote.enabled = NO;
     AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
     if (fbLogIn.emailCatch.length != 0) {
+        self.emailCatch = fbLogIn.emailCatch;
         [SVProgressHUD showWithStatus:@"please wait"];
         self.addNote.enabled = YES;
         [self didFinishSaveReLoad];
+    }else{
+        self.emailCatch = @"wxwxwxwxeqewqeqwfasfasf";
     }
 }
 
@@ -64,7 +67,7 @@
 //    self.tableView.estimatedRowHeight = 50;
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"wood2.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
     UIBarButtonItem *delete = [[UIBarButtonItem alloc]initWithTitle:@"刪除" style:UIBarButtonItemStylePlain target:self action:@selector(deletedelete)];
     
