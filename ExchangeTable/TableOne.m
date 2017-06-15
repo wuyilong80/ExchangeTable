@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray <Note *> *mainNotes;
 @property (nonatomic) NSString *emailCatch;
+@property (nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation TableOne
@@ -65,7 +66,20 @@
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    
+    self.refreshControl.backgroundColor = [UIColor whiteColor];
+    self.refreshControl.tintColor = [UIColor redColor];
+    
 }
+-(void)refresh{
+    
+    [self didFinishSaveReLoad];
+}
+
 - (IBAction)reFreshBtn:(id)sender {
     
     [SVProgressHUD showWithStatus:@"please wait"];
@@ -209,6 +223,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SVProgressHUD dismiss];
+                [self.refreshControl endRefreshing];
+
                 [self.tableView reloadData];
             });
         }else{

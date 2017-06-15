@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *conversationTextField;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (nonatomic) NSMutableArray *messageData;
-@property (nonatomic) CGFloat originHeight;
 @end
 
 @implementation ConversationViewController
@@ -55,8 +54,32 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(btnClose) name:@"FBisLogOut" object:nil];
     
     [SVProgressHUD showWithStatus:@"please wait"];
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(messageDownload) name:@"newMessage" object:nil];
-    self.originHeight = self.conversationTextField.frame.origin.y;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardwillshow:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardwillgone:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void) keyboardwillshow:(NSNotification*)sender {
+    
+    NSDictionary *dict = [sender userInfo];
+    
+    CGRect high = [[dict valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.view.frame = CGRectMake(0, -(self.view.bounds.size.height-high.size.height)/2, self.view.bounds.size.width, self.view.bounds.size.height);
+    }];
+}
+
+-(void) keyboardwillgone:(NSNotification*)sender{
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        
+        [self.view layoutIfNeeded];
+    }];
 }
 
 -(void) btnOpen {
@@ -70,7 +93,6 @@
     self.messageBtn.enabled = NO;
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -114,18 +136,15 @@
                 {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageData.count-1 inSection:0];
                 [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-                    
                 }
             });
         }else{
             NSLog(@"mapd:mysqli_errno %@",mysqli_errno);
         }
     }];
-
 }
 
 - (IBAction)messageSendBtn:(UIButton*)sender {
-    
     
     if (self.conversationTextField.text.length != 0 ) {
         sender.enabled = NO;
@@ -152,7 +171,6 @@
             NSLog(@"error %@",error);
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
-//                [[NSNotificationCenter defaultCenter]postNotificationName:@"newMessage" object:self userInfo:nil];
                 self.conversationTextField.text = @"";
                 [SVProgressHUD showWithStatus:@"please wait"];
             });
@@ -167,8 +185,6 @@
     self.conversationTextField.translatesAutoresizingMaskIntoConstraints = NO;
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.messageBtn.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    textField.frame = CGRectMake(0, 300, self.conversationTextField.bounds.size.width, self.conversationTextField.bounds.size.height);
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
