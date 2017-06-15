@@ -31,7 +31,7 @@
     
     UIButton *mail = [UIButton new];
     [mail setTitle:@"信箱交換" forState:UIControlStateNormal];
-    [mail setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [mail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     mail.frame = CGRectMake((self.view.bounds.size.width-200)/2, self.view.bounds.size.height-100, 100, 40);
     [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.3]];
     mail.layer.borderWidth = 1.5;
@@ -45,7 +45,7 @@
     
     UIButton *leaveMessage = [UIButton new];
     [leaveMessage setTitle:@"留言交換" forState:UIControlStateNormal];
-    [leaveMessage setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leaveMessage setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [leaveMessage setBackgroundColor:[UIColor colorWithRed:0.52 green:0.76 blue:1.00 alpha:0.3]];
     leaveMessage.frame = CGRectMake(((self.view.bounds.size.width-200)/2.0)+100, self.view.bounds.size.height-100, 100, 40);
     leaveMessage.layer.borderWidth = 1.5;

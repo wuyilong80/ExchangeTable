@@ -27,17 +27,24 @@
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancel:)];
     }
     
+    
     UIScrollView *scrollView  = [UIScrollView new];
     scrollView.frame = self.view.frame;
     scrollView.contentSize = CGSizeMake(320, 550);
     scrollView.showsVerticalScrollIndicator = NO;
+    
+    scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackboard.png"]];
+    
     [self.view addSubview:scrollView];
     
     UIButton *doneBtn = [UIButton new];
     [doneBtn sizeToFit];
     [doneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
-    [doneBtn setBackgroundColor:[UIColor colorWithRed:0.84 green:0.84 blue:0.83 alpha:1.0]];
+    doneBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    [doneBtn.heightAnchor constraintEqualToConstant:50].active = YES;
+//    [doneBtn setBackgroundColor:[UIColor redColor] ];
+    doneBtn.backgroundColor = [UIColor orangeColor];
     [doneBtn addTarget:self action:@selector(done) forControlEvents:UIControlEventTouchUpInside];
 
     UILabel *label1 = [UILabel new];
@@ -53,6 +60,7 @@
     textView1.layer.cornerRadius = 5;
     textView1.layer.borderWidth = 1.0;
     textView1.layer.borderColor = [UIColor grayColor].CGColor;
+    textView1.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
     [scrollView addSubview:textView1];
     textView1.translatesAutoresizingMaskIntoConstraints = NO;
     [textView1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
@@ -75,6 +83,7 @@
     textView2.layer.cornerRadius = 5;
     textView2.layer.borderWidth = 1.0;
     textView2.layer.borderColor = [UIColor grayColor].CGColor;
+    textView2.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4];
     [scrollView addSubview:textView2];
     textView2.translatesAutoresizingMaskIntoConstraints = NO;
     [textView2.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
@@ -97,6 +106,7 @@
     textView3.layer.cornerRadius = 5;
     textView3.layer.borderWidth = 1.0;
     textView3.layer.borderColor = [UIColor grayColor].CGColor;
+    textView3.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
     [scrollView addSubview:textView3];
     textView3.translatesAutoresizingMaskIntoConstraints = NO;
     [textView3.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
@@ -119,6 +129,7 @@
     textView4.layer.cornerRadius = 5;
     textView4.layer.borderWidth = 1.0;
     textView4.layer.borderColor = [UIColor grayColor].CGColor;
+    textView4.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.6];
     [scrollView addSubview:textView4];
     textView4.translatesAutoresizingMaskIntoConstraints = NO;
     [textView4.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
@@ -141,6 +152,7 @@
     textView5.layer.cornerRadius = 5;
     textView5.layer.borderWidth = 1.0;
     textView5.layer.borderColor = [UIColor grayColor].CGColor;
+    textView5.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.65];
     [scrollView addSubview:textView5];
     textView5.translatesAutoresizingMaskIntoConstraints = NO;
     [textView5.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;

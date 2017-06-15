@@ -64,6 +64,10 @@
     [self.tableView addSubview:self.reFresh];
     [self.reFresh addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     self.reFresh.tintColor = [UIColor whiteColor];
+    
+    
+    self.tableView.estimatedRowHeight = 50;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void)refresh{
@@ -149,7 +153,7 @@
                 [self.tableView reloadData];
                 if(self.messageData.count>0)
                 {
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageData.count-1 inSection:0];
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:self.messageData.count-1];
                 [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
             });
@@ -217,9 +221,40 @@
 
 #pragma mark UITableViewDataSource
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return self.messageData.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 5;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *sectionView = [UIView new];
+    
+    [tableView addSubview:sectionView];
+    
+    return sectionView;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    
+    return @"";
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    for (int x = 0; x < self.messageData.count; x++) {
+        if (section == x) {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -227,17 +262,29 @@
     ConverVCCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"convercell" forIndexPath:indexPath];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    for (int x = 0; x < self.messageData.count; x++) {
+        if (indexPath.section == x) {
     MessageNote *note=self.messageData[indexPath.row];
     
+    cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+    cell.layer.cornerRadius = 10;
+    cell.layer.borderWidth = 1;
+    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    cell.layer.shadowOpacity = 0.3;
+//    cell.layer.shadowOffset = CGSizeMake(5, 8);
+//    cell.layer.shadowColor = [UIColor blackColor].CGColor;
+    
     cell.nameLabel.text= [NSString stringWithFormat:@"%@ :",note.userID];
+    cell.nameLabel.textColor = [UIColor whiteColor];
+    cell.nameLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:22];
+    
     cell.contentLabel.text=note.content;
+    cell.contentLabel.textColor = [UIColor whiteColor];
+    cell.contentLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+    
     cell.timeLabel.text=note.time;
-//    cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
-//    cell.mainContextLabel.textColor = [UIColor lightTextColor];
-    
-//    cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
-//    cell.mainTitleLabel.textColor = [UIColor whiteColor];
-    
+        }
+    }
     return cell;
 }
 
