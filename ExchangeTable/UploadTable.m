@@ -51,6 +51,7 @@
     label1.text = @"換出遊戲:";
     [scrollView addSubview:label1];
     label1.translatesAutoresizingMaskIntoConstraints = NO;
+    [label1.topAnchor constraintEqualToAnchor:scrollView.topAnchor constant:10].active = YES;
     [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:10].active = YES;
     
     UITextView *textView1 = [UITextView new];
