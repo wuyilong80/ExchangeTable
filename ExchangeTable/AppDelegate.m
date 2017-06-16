@@ -10,7 +10,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @import GoogleMobileAds;
-
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -20,6 +22,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Fabric with:@[[Crashlytics class]]];
     
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-1634421637328936/3334548209"];
     

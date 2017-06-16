@@ -17,6 +17,8 @@
 		1381796B1EF3C0E500D22364 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138179691EF3C0E500D22364 /* README.txt */; };
 		138594501EF0E4AF002357F5 /* MessageAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1385944F1EF0E4AF002357F5 /* MessageAddModel.m */; };
 		138594531EF0E92D002357F5 /* MessageNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 138594521EF0E92D002357F5 /* MessageNote.m */; };
+		13A989661EF3D706008E02C4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A989651EF3D706008E02C4 /* Fabric.framework */; };
+		13A989681EF3D716008E02C4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A989671EF3D716008E02C4 /* Crashlytics.framework */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13BA23E41EF3D32300C81713 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
@@ -54,6 +56,8 @@
 		1385944F1EF0E4AF002357F5 /* MessageAddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAddModel.m; sourceTree = "<group>"; };
 		138594511EF0E92D002357F5 /* MessageNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNote.h; sourceTree = "<group>"; };
 		138594521EF0E92D002357F5 /* MessageNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNote.m; sourceTree = "<group>"; };
+		13A989651EF3D706008E02C4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Pods/Fabric/Fabric.framework; sourceTree = "<group>"; };
+		13A989671EF3D716008E02C4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/ExchangeTable-awbqgfcfjjlkdnefnqmrotxqvxly/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A989681EF3D716008E02C4 /* Crashlytics.framework in Frameworks */,
+				13A989661EF3D706008E02C4 /* Fabric.framework in Frameworks */,
 				13BA23E41EF3D32300C81713 /* SVProgressHUD.framework in Frameworks */,
 				1381796A1EF3C0E500D22364 /* GoogleMobileAds.framework in Frameworks */,
 				13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */,
@@ -239,6 +245,8 @@
 		6F23FF53676560893CA1950F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13A989671EF3D716008E02C4 /* Crashlytics.framework */,
+				13A989651EF3D706008E02C4 /* Fabric.framework */,
 				13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */,
 				138179671EF3C0E500D22364 /* GoogleMobileAdsSdkiOS-7.20.0 */,
 				13E979F61EEE4474007B1754 /* libSVProgressHUD.a */,
@@ -375,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -521,6 +529,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
 					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.20.0",
+					"$(PROJECT_DIR)/Pods/Fabric",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -543,6 +553,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
 					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.20.0",
+					"$(PROJECT_DIR)/Pods/Fabric",
+					"$(PROJECT_DIR)/Pods/Crashlytics",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

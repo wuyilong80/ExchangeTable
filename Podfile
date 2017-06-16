@@ -11,4 +11,5 @@ target 'ExchangeTable' do
   pod 'SVProgressHUD'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Firebase/Core'
 end
