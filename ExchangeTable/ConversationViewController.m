@@ -12,13 +12,18 @@
 #import "AppDelegate.h"
 #import "MessageAddModel.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+@import GoogleMobileAds;
 
-@interface ConversationViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface ConversationViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,GADInterstitialDelegate>
+{
+    AppDelegate *ad;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *conversationTextField;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (nonatomic) NSMutableArray *messageData;
 @property (nonatomic) UIRefreshControl *reFresh;
+
 @end
 
 @implementation ConversationViewController
@@ -43,8 +48,24 @@
     [self messageDownload];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (ad.interstitial.isReady) {
+        [ad.interstitial presentFromRootViewController:self];
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    ad = (AppDelegate*)[UIApplication sharedApplication].delegate ;
+    
+    ad.interstitial = [self createAndLoadInterstitial];
+    
+    
+    
+    
     
     self.conversationTextField.delegate = self;
     
@@ -68,6 +89,20 @@
     
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    
+}
+
+- (GADInterstitial *)createAndLoadInterstitial {
+    ad.interstitial =
+    [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-1634421637328936/3334548209"];
+    ad.interstitial.delegate = self;
+    [ad.interstitial loadRequest:[GADRequest request]];
+    return ad.interstitial;
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
+    ad.interstitial = [self createAndLoadInterstitial];
 }
 
 -(void)refresh{
@@ -145,6 +180,8 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SVProgressHUD dismiss];
+                
+                
                 AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
                 if (fbLogIn.emailCatch.length != 0) {
                     self.messageBtn.enabled = YES;

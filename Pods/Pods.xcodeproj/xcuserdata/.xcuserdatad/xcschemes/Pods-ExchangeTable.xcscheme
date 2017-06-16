@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D45387493D0E9BE94C7D6A62586B4C7A'
+               BlueprintIdentifier = '9F33888CBBCDF16E1BDAFF2EA06BF7A1'
                BlueprintName = 'Pods-ExchangeTable'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-ExchangeTable.a'>
+               BuildableName = 'Pods-ExchangeTable.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

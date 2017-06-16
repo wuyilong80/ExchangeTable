@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+@import GoogleMobileAds;
 
 
 @interface AppDelegate ()
@@ -19,6 +20,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-1634421637328936/3334548209"];
+    
+    self.interstitial = [[GADInterstitial alloc]
+                         initWithAdUnitID:@"ca-app-pub-1634421637328936/3334548209"];
+    GADRequest *request = [GADRequest request];
+    [self.interstitial loadRequest:request];
+    
+    
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];

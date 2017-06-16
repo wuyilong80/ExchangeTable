@@ -13,9 +13,12 @@
 		13246F841EEF9396008115D9 /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13246F831EEF9396008115D9 /* ConversationViewController.m */; };
 		13246F871EEFD160008115D9 /* ConverVCCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13246F861EEFD160008115D9 /* ConverVCCellController.m */; };
 		137BDBDC1EE6AA680069BB7A /* DeleteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 137BDBDB1EE6AA680069BB7A /* DeleteModel.m */; };
+		1381796A1EF3C0E500D22364 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138179681EF3C0E500D22364 /* GoogleMobileAds.framework */; };
+		1381796B1EF3C0E500D22364 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138179691EF3C0E500D22364 /* README.txt */; };
 		138594501EF0E4AF002357F5 /* MessageAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1385944F1EF0E4AF002357F5 /* MessageAddModel.m */; };
 		138594531EF0E92D002357F5 /* MessageNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 138594521EF0E92D002357F5 /* MessageNote.m */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
+		13BA23E41EF3D32300C81713 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
 		13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC31EB213B200F7B74A /* AppDelegate.m */; };
@@ -25,11 +28,10 @@
 		13E4F9A91ED45CF0007F2125 /* HistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9A81ED45CF0007F2125 /* HistoryList.m */; };
 		13E4F9AC1ED46032007F2125 /* HistoryListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E4F9AB1ED46032007F2125 /* HistoryListCellController.m */; };
 		13E813B51EE15EBF0045DAF5 /* CatchTheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E813B41EE15EBF0045DAF5 /* CatchTheModel.m */; };
-		13E979F71EEE4474007B1754 /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E979F61EEE4474007B1754 /* libSVProgressHUD.a */; };
 		13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B221EE0400D00781CDF /* Bolts.framework */; };
 		13EA7B261EE0400D00781CDF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */; };
 		13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */; };
-		A74A2A3A957843BC9CBA777C /* libPods-ExchangeTable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC529AA99EE3AE9B162FE77 /* libPods-ExchangeTable.a */; };
+		C0514881E31D07D01F75D56F /* Pods_ExchangeTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0EE110DF88AEFC0B6450C9 /* Pods_ExchangeTable.framework */; };
 		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
 /* End PBXBuildFile section */
@@ -46,12 +48,15 @@
 		13246F861EEFD160008115D9 /* ConverVCCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverVCCellController.m; sourceTree = "<group>"; };
 		137BDBDA1EE6AA680069BB7A /* DeleteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteModel.h; sourceTree = "<group>"; };
 		137BDBDB1EE6AA680069BB7A /* DeleteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteModel.m; sourceTree = "<group>"; };
+		138179681EF3C0E500D22364 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		138179691EF3C0E500D22364 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		1385944E1EF0E4AF002357F5 /* MessageAddModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAddModel.h; sourceTree = "<group>"; };
 		1385944F1EF0E4AF002357F5 /* MessageAddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAddModel.m; sourceTree = "<group>"; };
 		138594511EF0E92D002357F5 /* MessageNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNote.h; sourceTree = "<group>"; };
 		138594521EF0E92D002357F5 /* MessageNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNote.m; sourceTree = "<group>"; };
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
+		13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/ExchangeTable-awbqgfcfjjlkdnefnqmrotxqvxly/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
 		13C916E11EB8B5C6009E1CD3 /* CellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellController.m; sourceTree = "<group>"; };
 		13CC8CBC1EB213B200F7B74A /* ExchangeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,8 +78,8 @@
 		13EA7B221EE0400D00781CDF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		13EA7B231EE0400D00781CDF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3E0EE110DF88AEFC0B6450C9 /* Pods_ExchangeTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0232556F6289BBDFD81FAF0 /* Pods-ExchangeTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeTable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeTable/Pods-ExchangeTable.debug.xcconfig"; sourceTree = "<group>"; };
-		CCC529AA99EE3AE9B162FE77 /* libPods-ExchangeTable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExchangeTable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4075FF0B4827009C67E655B /* Pods-ExchangeTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeTable.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeTable/Pods-ExchangeTable.release.xcconfig"; sourceTree = "<group>"; };
 		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -87,17 +92,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E979F71EEE4474007B1754 /* libSVProgressHUD.a in Frameworks */,
+				13BA23E41EF3D32300C81713 /* SVProgressHUD.framework in Frameworks */,
+				1381796A1EF3C0E500D22364 /* GoogleMobileAds.framework in Frameworks */,
 				13EA7B251EE0400D00781CDF /* Bolts.framework in Frameworks */,
 				13EA7B261EE0400D00781CDF /* FBSDKCoreKit.framework in Frameworks */,
 				13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */,
-				A74A2A3A957843BC9CBA777C /* libPods-ExchangeTable.a in Frameworks */,
+				C0514881E31D07D01F75D56F /* Pods_ExchangeTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		138179671EF3C0E500D22364 /* GoogleMobileAdsSdkiOS-7.20.0 */ = {
+			isa = PBXGroup;
+			children = (
+				138179681EF3C0E500D22364 /* GoogleMobileAds.framework */,
+				138179691EF3C0E500D22364 /* README.txt */,
+			);
+			path = "GoogleMobileAdsSdkiOS-7.20.0";
+			sourceTree = "<group>";
+		};
 		13CC8CB31EB213B200F7B74A = {
 			isa = PBXGroup;
 			children = (
@@ -224,8 +239,10 @@
 		6F23FF53676560893CA1950F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */,
+				138179671EF3C0E500D22364 /* GoogleMobileAdsSdkiOS-7.20.0 */,
 				13E979F61EEE4474007B1754 /* libSVProgressHUD.a */,
-				CCC529AA99EE3AE9B162FE77 /* libPods-ExchangeTable.a */,
+				3E0EE110DF88AEFC0B6450C9 /* Pods_ExchangeTable.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -243,6 +260,7 @@
 				13CC8CBA1EB213B200F7B74A /* Resources */,
 				995C12D42A73769F09E4C513 /* [CP] Embed Pods Frameworks */,
 				5E5FE4DDE3EED5D62D1CDE4D /* [CP] Copy Pods Resources */,
+				13BA23E51EF3D37700C81713 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -294,6 +312,7 @@
 			files = (
 				1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */,
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
+				1381796B1EF3C0E500D22364 /* README.txt in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +320,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		13BA23E51EF3D37700C81713 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c5d93663d80b965f67f64b4037e285ab2c2b9c0f c85027af8309c8bc407957f66357c5c992a17ba5ef2d539bfdd26bec065c06b2";
+		};
 		5E5FE4DDE3EED5D62D1CDE4D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +520,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
+					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.20.0",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -509,6 +542,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExchangeTable/framework",
+					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-7.20.0",
 				);
 				INFOPLIST_FILE = ExchangeTable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
