@@ -264,15 +264,12 @@
     
     for (int x = 0; x < self.messageData.count; x++) {
         if (indexPath.section == x) {
-    MessageNote *note=self.messageData[indexPath.row];
+    MessageNote *note=self.messageData[x];
     
     cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
     cell.layer.cornerRadius = 10;
     cell.layer.borderWidth = 1;
     cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    cell.layer.shadowOpacity = 0.3;
-//    cell.layer.shadowOffset = CGSizeMake(5, 8);
-//    cell.layer.shadowColor = [UIColor blackColor].CGColor;
     
     cell.nameLabel.text= [NSString stringWithFormat:@"%@ :",note.userID];
     cell.nameLabel.textColor = [UIColor whiteColor];

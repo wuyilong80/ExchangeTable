@@ -121,9 +121,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    float red = (arc4random()%256)/255.0;
+    float green = (arc4random()%256)/255.0;
+
+    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:1 alpha:0.1];
     
     Note *note = self.data[indexPath.row];
     cell.textLabel.text = note.changeOutGame;
+    cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 
