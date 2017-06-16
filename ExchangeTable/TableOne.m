@@ -80,7 +80,9 @@
     
     [self didFinishSaveReLoad:@""];
 }
+
 #pragma mark UISearchBarDelegate
+
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
     [self didFinishSaveReLoad:searchText];
@@ -105,11 +107,11 @@
     [searchBar resignFirstResponder];
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark FBSDKLogin
 
 - (void)loginButton:(FBSDKLoginButton *)loginButton
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
@@ -131,7 +133,6 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
             }
         }];
     }
-
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
@@ -145,17 +146,6 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 
 #pragma mark UITableViewDataSource
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    for (int x = 0; x < self.mainNotes.count; x++) {
-        if (section == x) {
-            return 1;
-        }
-    }
-//    return self.mainNotes.count;
-    return 0;
-}
-
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return self.mainNotes.count;
@@ -164,27 +154,6 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
     return 10;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    for (int x = 0; x < self.mainNotes.count; x++) {
-        if (indexPath.section == x) {
-            Note *note=self.mainNotes[x];
-            
-            cell.mainContextLabel.text=note.changeOutGame;
-            cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
-            cell.mainContextLabel.textColor = [UIColor lightTextColor];
-            
-            cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
-            cell.mainTitleLabel.textColor = [UIColor whiteColor];
-        }
-    }
-    return  cell;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -201,6 +170,42 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     return @"";
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    for (int x = 0; x < self.mainNotes.count; x++) {
+        if (section == x) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CellController *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    for (int x = 0; x < self.mainNotes.count; x++) {
+        if (indexPath.section == x) {
+            Note *note=self.mainNotes[x];
+            
+            cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
+            cell.layer.cornerRadius = 10;
+            
+            cell.mainContextLabel.text=note.changeOutGame;
+            cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
+            cell.mainContextLabel.textColor = [UIColor lightTextColor];
+            
+            cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
+            cell.mainTitleLabel.textColor = [UIColor whiteColor];
+        }
+    }
+    return  cell;
+}
+
+#pragma mark prepareForSegue
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     

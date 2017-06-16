@@ -71,15 +71,13 @@
     
     [self.tableView setTableFooterView:[UIView new]];
     
-    self.smallTitle = @[@"換出遊戲:",@"換入遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期:"];
+    self.smallTitle = @[@"想換出的遊戲:",@"想換入的遊戲:",@"交換地區:",@"交換方式:",@"信箱:",@"發文日期:"];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
 }
 -(void) leaveMessagePressed {
     
     [self performSegueWithIdentifier:@"conversationsegue" sender:nil];
-//    ConversationViewController *conversation = [self.storyboard instantiateViewControllerWithIdentifier:@"conversation"];
-//    [self presentViewController:conversation animated:YES completion:nil];
 }
 
 -(void) sentMail {
@@ -116,6 +114,7 @@
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.1];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
     cell.detailTitle.textColor = [UIColor whiteColor];
@@ -125,6 +124,8 @@
     
     return  cell;
 }
+
+#pragma mark prepareForSegue
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     

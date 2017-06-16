@@ -24,7 +24,6 @@
 @property (nonatomic) NSMutableArray <Note *> *data;
 @property (nonatomic) UILabel *sorryLabel;
 @property (nonatomic) NSString *emailCatch;
-//@property (nonatomic) BOOL ddddd;
 @end
 
 @implementation HistoryList
@@ -62,10 +61,6 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    self.ddddd = NO;
-    
-//    self.tableView.estimatedRowHeight = 50;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
     
@@ -76,14 +71,6 @@
 }
 
 -(void) deletedelete {
-    
-//    if (self.ddddd == NO) {
-//        [self.tableView setEditing:YES];
-//        self.ddddd = YES;
-//    }else{
-//        [self.tableView setEditing:NO];
-//        self.ddddd = NO;
-//    }
     
     if (self.tableView.isEditing == NO) {
         [self.tableView setEditing:YES];
@@ -185,10 +172,7 @@
 
 -(void)didFinishSaveCancel:(Note *)cancelNote{
     
-//    NSInteger index = [self.data indexOfObject:cancelNote];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.data removeObject:cancelNote];
-//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView reloadData];
 }
 
@@ -260,6 +244,8 @@
         }
     }];
 }
+
+#pragma mark prepareForSegue
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     

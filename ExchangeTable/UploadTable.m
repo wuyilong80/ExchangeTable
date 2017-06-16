@@ -43,7 +43,6 @@
     [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
     doneBtn.translatesAutoresizingMaskIntoConstraints = NO;
     [doneBtn.heightAnchor constraintEqualToConstant:50].active = YES;
-//    [doneBtn setBackgroundColor:[UIColor redColor] ];
     doneBtn.backgroundColor = [UIColor orangeColor];
     [doneBtn addTarget:self action:@selector(done) forControlEvents:UIControlEventTouchUpInside];
 
