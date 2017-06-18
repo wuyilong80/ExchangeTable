@@ -35,6 +35,10 @@
 		13EA7B271EE0400D00781CDF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EA7B241EE0400D00781CDF /* FBSDKLoginKit.framework */; };
 		C0514881E31D07D01F75D56F /* Pods_ExchangeTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0EE110DF88AEFC0B6450C9 /* Pods_ExchangeTable.framework */; };
 		EC0F27671EF43FD500D85661 /* NewLaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */; };
+		EC2501E91EF65169002D3B57 /* GEP-06.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2501E81EF65169002D3B57 /* GEP-06.png */; };
+		EC2501EB1EF65BF3002D3B57 /* GEP-08.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2501EA1EF65BF3002D3B57 /* GEP-08.png */; };
+		EC3EB2771EF6AAFC00120026 /* GEP-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */; };
+		EC3EB2791EF6AC8B00120026 /* GEP-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3EB2781EF6AC8B00120026 /* GEP-02.png */; };
 		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
 /* End PBXBuildFile section */
@@ -87,6 +91,10 @@
 		B0232556F6289BBDFD81FAF0 /* Pods-ExchangeTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeTable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeTable/Pods-ExchangeTable.debug.xcconfig"; sourceTree = "<group>"; };
 		D4075FF0B4827009C67E655B /* Pods-ExchangeTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeTable.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeTable/Pods-ExchangeTable.release.xcconfig"; sourceTree = "<group>"; };
 		EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLaunchScreen.png; sourceTree = "<group>"; };
+		EC2501E81EF65169002D3B57 /* GEP-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-06.png"; sourceTree = "<group>"; };
+		EC2501EA1EF65BF3002D3B57 /* GEP-08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-08.png"; sourceTree = "<group>"; };
+		EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "GEP-2.jpg"; sourceTree = "<group>"; };
+		EC3EB2781EF6AC8B00120026 /* GEP-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-02.png"; sourceTree = "<group>"; };
 		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		EC99C9421EB5DA68007333F6 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -143,6 +151,10 @@
 		13CC8CBE1EB213B200F7B74A /* ExchangeTable */ = {
 			isa = PBXGroup;
 			children = (
+				EC2501E81EF65169002D3B57 /* GEP-06.png */,
+				EC2501EA1EF65BF3002D3B57 /* GEP-08.png */,
+				EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */,
+				EC3EB2781EF6AC8B00120026 /* GEP-02.png */,
 				EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */,
 				13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */,
 				1315DBFA1ECD4E53006F004A /* Main.storyboard */,
@@ -321,10 +333,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2501E91EF65169002D3B57 /* GEP-06.png in Resources */,
 				1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */,
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
+				EC3EB2771EF6AAFC00120026 /* GEP-2.jpg in Resources */,
 				1381796B1EF3C0E500D22364 /* README.txt in Resources */,
 				EC0F27671EF43FD500D85661 /* NewLaunchScreen.png in Resources */,
+				EC2501EB1EF65BF3002D3B57 /* GEP-08.png in Resources */,
+				EC3EB2791EF6AC8B00120026 /* GEP-02.png in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

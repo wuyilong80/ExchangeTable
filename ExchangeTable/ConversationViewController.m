@@ -69,7 +69,7 @@
     
     self.conversationTextField.delegate = self;
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-08.png"]];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(btnOpen) name:@"FBisLogIn" object:nil];
     
@@ -303,17 +303,17 @@
         if (indexPath.section == x) {
     MessageNote *note=self.messageData[x];
     
-    cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+    cell.backgroundColor = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:0.2];
     cell.layer.cornerRadius = 10;
     cell.layer.borderWidth = 1;
     cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     cell.nameLabel.text= [NSString stringWithFormat:@"%@ :",note.userID];
-    cell.nameLabel.textColor = [UIColor whiteColor];
+    cell.nameLabel.textColor = [UIColor blackColor];
     cell.nameLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:22];
     
     cell.contentLabel.text=note.content;
-    cell.contentLabel.textColor = [UIColor whiteColor];
+    cell.contentLabel.textColor = [UIColor blackColor];
     cell.contentLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
     
     cell.timeLabel.text=note.time;

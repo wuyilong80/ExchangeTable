@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-08.png"]];
     
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -114,13 +114,13 @@
     MessageCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.1];
+    cell.backgroundColor = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:0.2];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
-    cell.detailTitle.textColor = [UIColor whiteColor];
+    cell.detailTitle.textColor = [UIColor blackColor];
     
     cell.detailContext.text = self.detailNotes[indexPath.row];
-    cell.detailContext.textColor = [UIColor whiteColor];
+    cell.detailContext.textColor = [UIColor blackColor];
     
     return  cell;
 }

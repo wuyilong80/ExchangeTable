@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-02.png"]];
     
     self.searchBar.delegate = self;
     
@@ -191,15 +191,16 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
         if (indexPath.section == x) {
             Note *note=self.mainNotes[x];
             
-            cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
+            cell.backgroundColor = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:0.2];
+//            cell.backgroundColor = [UIColor lightGrayColor];
             cell.layer.cornerRadius = 10;
             
             cell.mainContextLabel.text=note.changeOutGame;
             cell.mainContextLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
-            cell.mainContextLabel.textColor = [UIColor lightTextColor];
+            cell.mainContextLabel.textColor = [UIColor blackColor];
             
             cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
-            cell.mainTitleLabel.textColor = [UIColor whiteColor];
+            cell.mainTitleLabel.textColor = [UIColor blackColor];
         }
     }
     return  cell;
