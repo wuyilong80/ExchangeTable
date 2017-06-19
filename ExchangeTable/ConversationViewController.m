@@ -85,8 +85,6 @@
     
     self.tableView.estimatedRowHeight = 50;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    
 }
 
 - (GADInterstitial *)createAndLoadInterstitial {
@@ -177,12 +175,11 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SVProgressHUD dismiss];
-                
-                
                 AppDelegate *fbLogIn = (AppDelegate*)[UIApplication sharedApplication].delegate;
                 if (fbLogIn.emailCatch.length != 0) {
                     self.messageBtn.enabled = YES;
                 }
+                
                 [self.reFresh endRefreshing];
                 [self.tableView reloadData];
                 if(self.messageData.count>0)
