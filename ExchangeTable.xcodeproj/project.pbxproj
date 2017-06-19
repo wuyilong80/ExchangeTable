@@ -21,6 +21,8 @@
 		13A989681EF3D716008E02C4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A989671EF3D716008E02C4 /* Crashlytics.framework */; };
 		13B4C4761EC496D200F4F254 /* MessageCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B4C4751EC496D200F4F254 /* MessageCellController.m */; };
 		13BA23E41EF3D32300C81713 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */; };
+		13C711C61EF75FC30067E7B2 /* GEP-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 13C711C51EF75FC30067E7B2 /* GEP-03.png */; };
+		13C711C81EF762220067E7B2 /* GEP-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 13C711C71EF762220067E7B2 /* GEP-04.png */; };
 		13C916E21EB8B5C6009E1CD3 /* CellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C916E11EB8B5C6009E1CD3 /* CellController.m */; };
 		13CC8CC11EB213B200F7B74A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC01EB213B200F7B74A /* main.m */; };
 		13CC8CC41EB213B200F7B74A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC8CC31EB213B200F7B74A /* AppDelegate.m */; };
@@ -37,7 +39,6 @@
 		EC0F27671EF43FD500D85661 /* NewLaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */; };
 		EC2501E91EF65169002D3B57 /* GEP-06.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2501E81EF65169002D3B57 /* GEP-06.png */; };
 		EC2501EB1EF65BF3002D3B57 /* GEP-08.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2501EA1EF65BF3002D3B57 /* GEP-08.png */; };
-		EC3EB2771EF6AAFC00120026 /* GEP-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */; };
 		EC3EB2791EF6AC8B00120026 /* GEP-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EC3EB2781EF6AC8B00120026 /* GEP-02.png */; };
 		EC6607191EBA1B800098D625 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6607181EBA1B800098D625 /* MessageViewController.m */; };
 		EC99C9441EB5DA68007333F6 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EC99C9431EB5DA68007333F6 /* Note.m */; };
@@ -66,6 +67,8 @@
 		13B4C4741EC496D200F4F254 /* MessageCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCellController.h; sourceTree = "<group>"; };
 		13B4C4751EC496D200F4F254 /* MessageCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCellController.m; sourceTree = "<group>"; };
 		13BA23E31EF3D32300C81713 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/ExchangeTable-awbqgfcfjjlkdnefnqmrotxqvxly/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		13C711C51EF75FC30067E7B2 /* GEP-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-03.png"; sourceTree = "<group>"; };
+		13C711C71EF762220067E7B2 /* GEP-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-04.png"; sourceTree = "<group>"; };
 		13C916E01EB8B5C6009E1CD3 /* CellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellController.h; sourceTree = "<group>"; };
 		13C916E11EB8B5C6009E1CD3 /* CellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellController.m; sourceTree = "<group>"; };
 		13CC8CBC1EB213B200F7B74A /* ExchangeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +96,6 @@
 		EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLaunchScreen.png; sourceTree = "<group>"; };
 		EC2501E81EF65169002D3B57 /* GEP-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-06.png"; sourceTree = "<group>"; };
 		EC2501EA1EF65BF3002D3B57 /* GEP-08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-08.png"; sourceTree = "<group>"; };
-		EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "GEP-2.jpg"; sourceTree = "<group>"; };
 		EC3EB2781EF6AC8B00120026 /* GEP-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GEP-02.png"; sourceTree = "<group>"; };
 		EC6607171EBA1B800098D625 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		EC6607181EBA1B800098D625 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -153,7 +155,8 @@
 			children = (
 				EC2501E81EF65169002D3B57 /* GEP-06.png */,
 				EC2501EA1EF65BF3002D3B57 /* GEP-08.png */,
-				EC3EB2761EF6AAFC00120026 /* GEP-2.jpg */,
+				13C711C51EF75FC30067E7B2 /* GEP-03.png */,
+				13C711C71EF762220067E7B2 /* GEP-04.png */,
 				EC3EB2781EF6AC8B00120026 /* GEP-02.png */,
 				EC0F27661EF43FD500D85661 /* NewLaunchScreen.png */,
 				13CC8CCD1EB213B200F7B74A /* LaunchScreen.storyboard */,
@@ -334,11 +337,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2501E91EF65169002D3B57 /* GEP-06.png in Resources */,
+				13C711C61EF75FC30067E7B2 /* GEP-03.png in Resources */,
 				1315DBFB1ECD4E53006F004A /* Main.storyboard in Resources */,
 				13CC8CCF1EB213B200F7B74A /* LaunchScreen.storyboard in Resources */,
-				EC3EB2771EF6AAFC00120026 /* GEP-2.jpg in Resources */,
 				1381796B1EF3C0E500D22364 /* README.txt in Resources */,
 				EC0F27671EF43FD500D85661 /* NewLaunchScreen.png in Resources */,
+				13C711C81EF762220067E7B2 /* GEP-04.png in Resources */,
 				EC2501EB1EF65BF3002D3B57 /* GEP-08.png in Resources */,
 				EC3EB2791EF6AC8B00120026 /* GEP-02.png in Resources */,
 				13CC8CCC1EB213B200F7B74A /* Assets.xcassets in Resources */,
@@ -403,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

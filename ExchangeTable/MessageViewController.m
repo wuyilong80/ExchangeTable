@@ -33,7 +33,7 @@
     [mail setTitle:@"信箱交換" forState:UIControlStateNormal];
     [mail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     mail.frame = CGRectMake((self.view.bounds.size.width-200)/2, self.view.bounds.size.height-100, 100, 40);
-    [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.3]];
+    [mail setBackgroundColor:[UIColor colorWithRed:0.99 green:0.66 blue:0.34 alpha:0.5]];
     mail.layer.borderWidth = 1.5;
     mail.layer.borderColor = [UIColor grayColor].CGColor;
     mail.layer.shadowOpacity = 0.5;
@@ -46,7 +46,7 @@
     UIButton *leaveMessage = [UIButton new];
     [leaveMessage setTitle:@"留言交換" forState:UIControlStateNormal];
     [leaveMessage setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [leaveMessage setBackgroundColor:[UIColor colorWithRed:0.52 green:0.76 blue:1.00 alpha:0.3]];
+    [leaveMessage setBackgroundColor:[UIColor colorWithRed:0.52 green:0.76 blue:1.00 alpha:0.5]];
     leaveMessage.frame = CGRectMake(((self.view.bounds.size.width-200)/2.0)+100, self.view.bounds.size.height-100, 100, 40);
     leaveMessage.layer.borderWidth = 1.5;
     leaveMessage.layer.borderColor = [UIColor grayColor].CGColor;
@@ -117,9 +117,11 @@
     cell.backgroundColor = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:0.2];
     
     cell.detailTitle.text = self.smallTitle[indexPath.row];
-    cell.detailTitle.textColor = [UIColor blackColor];
+    cell.detailTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:25];
+    cell.detailTitle.textColor = [UIColor colorWithRed:0.23 green:0.00 blue:0.44 alpha:0.6];
     
     cell.detailContext.text = self.detailNotes[indexPath.row];
+    cell.detailContext.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
     cell.detailContext.textColor = [UIColor blackColor];
     
     return  cell;

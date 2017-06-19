@@ -63,13 +63,9 @@
     
     ad.interstitial = [self createAndLoadInterstitial];
     
-    
-    
-    
-    
     self.conversationTextField.delegate = self;
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-08.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-03.png"]];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(btnOpen) name:@"FBisLogIn" object:nil];
     
@@ -84,7 +80,7 @@
     self.reFresh = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.reFresh];
     [self.reFresh addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    self.reFresh.tintColor = [UIColor whiteColor];
+    self.reFresh.tintColor = [UIColor orangeColor];
     
     
     self.tableView.estimatedRowHeight = 50;
@@ -156,7 +152,7 @@
     
     [MessageAddModel gameid:self.articleID the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSLog(@"%@",error);
+        NSLog(@"1111 %@",error);
         NSDictionary *pd;
         NSError *err_json;
         
@@ -313,7 +309,7 @@
     cell.nameLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:22];
     
     cell.contentLabel.text=note.content;
-    cell.contentLabel.textColor = [UIColor blackColor];
+    cell.contentLabel.textColor = [UIColor purpleColor];
     cell.contentLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
     
     cell.timeLabel.text=note.time;

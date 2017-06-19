@@ -26,7 +26,6 @@
     [Fabric with:@[[Crashlytics class]]];
     
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-1634421637328936/3334548209"];
-//    [GADMobileAds configureWithApplicationID:@"ca-app-pub-1634421637328936~9381081808"];
     
     self.interstitial = [[GADInterstitial alloc]
                          initWithAdUnitID:@"ca-app-pub-1634421637328936/3334548209"];

@@ -33,7 +33,7 @@
     scrollView.contentSize = CGSizeMake(320, 550);
     scrollView.showsVerticalScrollIndicator = NO;
     
-    scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackboard.png"]];
+    scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"GEP-03.png"]];
     
     [self.view addSubview:scrollView];
     

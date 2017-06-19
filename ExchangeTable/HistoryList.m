@@ -62,7 +62,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blackboard.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-03.png"]];
     
     UIBarButtonItem *delete = [[UIBarButtonItem alloc]initWithTitle:@"刪除" style:UIBarButtonItemStylePlain target:self action:@selector(deletedelete)];
     
@@ -115,7 +115,7 @@
     
     Note *note = self.data[indexPath.row];
     cell.textLabel.text = note.changeOutGame;
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
 

@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-02.png"]];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"GEP-03.png"]];
     
     self.searchBar.delegate = self;
     
@@ -72,7 +72,7 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];    
-    self.refreshControl.tintColor = [UIColor whiteColor];
+    self.refreshControl.tintColor = [UIColor orangeColor];
     
 }
 
@@ -200,7 +200,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
             cell.mainContextLabel.textColor = [UIColor blackColor];
             
             cell.mainTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30];
-            cell.mainTitleLabel.textColor = [UIColor blackColor];
+            cell.mainTitleLabel.textColor = [UIColor colorWithRed:0.23 green:0.00 blue:0.44 alpha:0.6];
+//            cell.mainTitleLabel.textColor = [UIColor colorWithRed:0.92 green:0.46 blue:0.00 alpha:0.6];
         }
     }
     return  cell;
