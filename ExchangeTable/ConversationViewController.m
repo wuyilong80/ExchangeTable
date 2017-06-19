@@ -151,8 +151,9 @@
 - (void) messageDownload {
     
     [MessageAddModel gameid:self.articleID the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSLog(@"1111 %@",error);
+        if (error != nil) {
+            NSLog(@"%@",error);
+        }
         NSDictionary *pd;
         NSError *err_json;
         

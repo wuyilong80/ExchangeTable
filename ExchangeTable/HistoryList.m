@@ -110,8 +110,12 @@
     HistoryListCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     float red = (arc4random()%256)/255.0;
     float green = (arc4random()%256)/255.0;
-
-    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:1 alpha:0.1];
+    
+    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:1 alpha:0.3];
+    
+    cell.layer.cornerRadius = 10;
+    cell.layer.borderWidth = 1;
+    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     Note *note = self.data[indexPath.row];
     cell.textLabel.text = note.changeOutGame;
@@ -185,7 +189,6 @@
     [request setHTTPMethod:@"POST"];
     
     NSString *params = [NSString stringWithFormat:@"GameName=%@&WantGame=%@&Area=%@&ChangeType=%@&mail=%@&gameid=%@",updateNote.changeOutGame,updateNote.changeInGame,updateNote.contactArea,updateNote.contactType,updateNote.contactMail,updateNote.gameid];
-    NSLog(@"%@",updateNote.gameid);
     
     NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -210,8 +213,9 @@
 -(void)didFinishSaveReLoad{
     
     [CatchTheModel userid:(NSString*)self.emailCatch the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSLog(@"%@",error);
+        if (error != nil) {
+            NSLog(@"%@",error);
+        }
         NSDictionary *pd;
         NSError *err_json;
         
@@ -253,7 +257,6 @@
         UploadTable *upLoad = segue.destinationViewController;
         NSIndexPath *i = [self.tableView indexPathForSelectedRow];
         Note *note=self.data[i.row];
-        NSLog(@"%@",note);
         upLoad.upLoadNote = note;
         upLoad.delegate = self;
     }

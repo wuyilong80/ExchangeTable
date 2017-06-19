@@ -223,8 +223,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 -(void)didFinishSaveReLoad:(NSString*)search{
     
     [TheModel search:search the_fetch:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSLog(@"%@",error);
+        if (error != nil) {
+            NSLog(@"%@",error);
+        }
         NSDictionary *pd;
         NSError *err_json;
         
