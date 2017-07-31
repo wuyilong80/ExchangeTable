@@ -23,6 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    {
+        sleep(5);
+    }
+    
     [Fabric with:@[[Crashlytics class]]];
     
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-1634421637328936~9381081808"];
